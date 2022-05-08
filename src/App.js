@@ -1,9 +1,10 @@
 import './App.css';
+import Navbar from './components/Navbar/Navbar';
 
-function App() {
+const  App = () => {
   return (
     <div className="App">
-      Hello World!
+      <Navbar about={'About'} trial={'Trial'} tutorials={'Tutorials'} free={'Win a Course'} testimonials={'Testimonials'}/>
     </div>
   );
 }
