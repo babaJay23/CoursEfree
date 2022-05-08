@@ -29,6 +29,7 @@ const AboutSection = styled.div`
    align-items: flex-start;
    justify-content: center;
    padding: 20px;
+   margin-top: 60px;
 
 `
 
@@ -36,7 +37,7 @@ const AboutText = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-top: 50px;
+  margin-top: 30px;
   margin-left: 70px;
 `
 
@@ -99,4 +100,4 @@ const SectionImage = styled.div`
   width: 100%;
   padding-left: 20px;
 `
-export default About
+export default About;
