@@ -4,7 +4,7 @@ import Home from './components/Home/Home';
 import Navbar from './components/Navbar/Navbar';
 import Trial from './components/Trial/Trial';
 import Tutorial from './components/Tutorials/Tutorial';
-
+import Free from './components/Free/Free';
 const  App = () => {
   return (
     <div className="App">
@@ -13,6 +13,7 @@ const  App = () => {
       <About />
       <Trial />
       <Tutorial text={'Try Now'} />
+      <Free />
     </div>
   );
 }
