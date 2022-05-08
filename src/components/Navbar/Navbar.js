@@ -5,7 +5,7 @@ const Navbar = ({about, trial, tutorials, free, testimonials}) => {
   return (
     <HeaderContainer className='header'>
       <LogoContainer className="logo">
-        <img src="logo.png" alt="logo" />
+        <img src="logo.png" style={{ cursor: 'pointer' }} alt="logo" />
       </LogoContainer>
       <NavigationContainer className="navigation">
         <NavBar>
