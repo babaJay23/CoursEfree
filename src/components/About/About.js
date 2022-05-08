@@ -30,6 +30,7 @@ const AboutSection = styled.div`
    justify-content: center;
    padding: 20px;
    margin-top: 60px;
+   padding-bottom: 50px;
 
 `
 
