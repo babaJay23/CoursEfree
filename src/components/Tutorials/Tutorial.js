@@ -68,7 +68,7 @@ const Tutorial = ({text}) =>{
                   lineHeight: 1.5, 
                   width: '100%', 
                   fontWeight: 500,
-                  fontSize: '1.2rem'  
+                  fontSize: '1rem'  
                   }}>{item.description}</p>
                   <Modal show={show} handleClose={closeModal} />
                 <TutorialButton onClick={showModal}>{text}</TutorialButton>
