@@ -48,7 +48,7 @@ const FreeImage = styled.div`
 const FreeText = styled.div`
   display: flex;
   margin-top: 30px;
-  width: 50%;
+  width: 60%;
   padding: 0px 30px;
   flex-direction: column;
 `
