@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
+import CountUp from 'react-countup';
 
 const Trial = () => {
   return (
@@ -16,7 +17,7 @@ const Trial = () => {
       <SectionImages className="section-images">
         <TrialDescription className="description">
           <img src="/img/trial1.png" alt="trial1" />
-          <H3 style={{ marginTop: '20px' }}>250</H3>
+          <H3 style={{ marginTop: '20px' }}><CountUp end={250} /></H3>
           <p style={{  marginTop: '10px', fontWeight: 500 }}>Tutorials+</p>
         </TrialDescription>
         <TrialDescription className="description">
@@ -26,7 +27,7 @@ const Trial = () => {
         </TrialDescription>
         <TrialDescription className="description">
           <img src="/img/trial3.png" alt="trial3" />
-          <H3 style={{ marginTop: '20px' }}> 126 +</H3>
+          <H3 style={{ marginTop: '20px' }}><CountUp end={126} /> +</H3>
           <p style={{  marginTop: '10px', fontWeight: 500 }}>Downloads</p>
         </TrialDescription>
       </SectionImages>

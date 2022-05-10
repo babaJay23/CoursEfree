@@ -1,10 +1,25 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { FaFacebookF, FaInstagram, FaTwitter} from 'react-icons/fa';
 import styled from 'styled-components';
+import { useForm } from 'react-hook-form';
+
 
 const Footer = () => {
+
+  const { register, handleSubmit, formState: { errors } } = useForm();
+
+  const [email, setEmail] = useState("");
+
+  const handleInputChange = (event) =>{
+    setEmail(event.target.value)
+}
+
+const handleFormSubmit = (e) =>{
+  e.preventDefault()
+}
   return (
     <FooterContainer className='footer'>
+      <TopContainer className="top-container">
       <FooterIcons className="footer-icons">
         <FooterImage src="/img/footer.png" alt="logo" />
 
@@ -28,11 +43,26 @@ const Footer = () => {
 
         <FooterForm className="footer-form">
           <p style={{  fontSize: '0.8rem' }}>Receive news right on your email</p>
-          <SubscribeForm>
-            <FormInput type="text" placeholder='Enter your e-mail here*'/>
+          <SubscribeForm onSubmit={handleSubmit(handleFormSubmit)}>
+            <FormInput 
+            type="text"
+            value={email} 
+           {...register('email', {
+             required: true,
+             pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ 
+            })}
+           onChange={handleInputChange}  
+            placeholder='Enter your e-mail here*'
+            />
+            {errors.email && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '10px' }}>Please enter valid Email*</p>}
             <FormButton type='submit'>Subscribe</FormButton>
           </SubscribeForm>
         </FooterForm>
+      </TopContainer>
+      <BottomSection className="bottom-section">
+          <HR />
+          <p style={{ marginTop: '20px', fontSize: '0.8rem' }}>Copyright © 2022. All Rights Reserved.</p>
+      </BottomSection>
     </FooterContainer>
   )
 }
@@ -42,6 +72,15 @@ const FooterContainer = styled.div`
   background-color: #1a2b2a;
   width: 100%;
   padding: 100px;
+  justify-content: space-around;
+  flex-direction: column;
+  color: #fff;
+`
+
+const TopContainer = styled.div`
+  display: flex;
+  background-color: #1a2b2a;
+  width: 100%;
   justify-content: space-around;
   color: #fff;
 `
@@ -78,7 +117,7 @@ const FooterForm = styled.div`
   width: 40%;
 `
 
-const SubscribeForm = styled.div`
+const SubscribeForm = styled.form`
   display: flex;
   flex-direction: column;
   margin-top: 20px;
@@ -110,6 +149,27 @@ const FormButton = styled.button`
     background-color: #817dea;
   }
 `
+
+const BottomSection = styled.div`
+  display: flex;
+  background-color: #1a2b2a;
+  width: 100%;
+  padding: 0px 100px;
+  justify-content: space-around;
+  flex-direction: column;
+  color: #fff;
+  margin-top: 50px;
+`
+
+const HR = styled.hr`
+  border: none;
+  height: 0.5px;
+  background-color: #817dea;
+`
+
+
+
+
 
 
 

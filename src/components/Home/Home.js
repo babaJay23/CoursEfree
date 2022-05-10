@@ -1,7 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
-
+import { useForm } from 'react-hook-form';
 const Home = ()  =>{
+
+  const { register, handleSubmit, formState: { errors } } = useForm();
+
+  const [email, setEmail] = useState("");
+
+  const handleInputChange = (event) =>{
+      setEmail(event.target.value)
+  }
+
+  const handleFormSubmit = (e) =>{
+    e.preventDefault()
+  }
+
   return (
     <HomeContainer className='home'>
       <SectionImage className="section-image">
@@ -10,8 +23,17 @@ const Home = ()  =>{
       <SectionDescription className="section-description">
         <Heading>Start your free trial</Heading>
         <Description>Subscribe and start learning today! Your free trial includes 14-day unlimited watches.</Description>
-        <Form>
-          <Input type="email" placeholder='Enter your e-mail here*'/>
+        <Form  onSubmit={handleSubmit(handleFormSubmit)}>
+          <Input type="email"
+           value={email} 
+           {...register('email', {
+             required: true,
+             pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ 
+            })}
+           onChange={handleInputChange} 
+           placeholder='Enter your e-mail here*'
+           />
+           {errors.email && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '10px' }}>Please enter valid Email*</p>}
           <Button type='submit'>Subscribe</Button>
         </Form>
       </SectionDescription>
