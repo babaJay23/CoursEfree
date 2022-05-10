@@ -21,7 +21,7 @@
 
 ![user-form](readmeimages/footer1.png)
 
-### This will help doctors
+### This will help Tutors to:
 
     View their students
     Show their availability for the enrollment
