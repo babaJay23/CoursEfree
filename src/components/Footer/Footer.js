@@ -90,6 +90,7 @@ const FormInput = styled.input`
   width: 70%;
   outline: none;
   border: none;
+  border-radius: 10px;
 `
 
 const FormButton = styled.button`
@@ -103,7 +104,11 @@ const FormButton = styled.button`
   font-weight: 700;
   cursor: pointer;
   color: #fff;
-  background-color: ;
+  background-color: #0bce97;
+  border-radius: 10px;
+  &:hover{
+    background-color: #817dea;
+  }
 `
 
 
