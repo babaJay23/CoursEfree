@@ -37,7 +37,6 @@ const  sectionContents = [
 ]
 
 
-
 const Tutorial = ({text}) =>{
 
   const [show, setShow] = useState(false)
