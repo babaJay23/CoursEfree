@@ -1,5 +1,7 @@
 import React, {useState, useEffect } from 'react'
 import styled from 'styled-components';
+import Modal from '../../reusable/Modal';
+
 
 const  sectionContents = [
   {
@@ -34,6 +36,17 @@ const colors = ['green', 'red', 'blue'];
 
 const Tutorial = ({text}) =>{
 
+  const [show, setShow] = useState(false)
+
+  const showModal = () => {
+		setShow(true);
+	};
+
+	// function to close the modal
+	const closeModal = () => {
+		setShow(false);
+	};
+
   return (
     <TutorialSection className='tutorial-section'>
       <TutorialHeading>Our Best Tutorials</TutorialHeading>
@@ -51,7 +64,8 @@ const Tutorial = ({text}) =>{
                   fontWeight: 500,
                   fontSize: '1.2rem'  
                   }}>{item.description}</p>
-                <TutorialButton>{text}</TutorialButton>
+                  <Modal show={show} handleClose={closeModal} />
+                <TutorialButton onClick={showModal}>{text}</TutorialButton>
               </SectionContents>
             )
           })
@@ -100,7 +114,8 @@ const SectionContents = styled.div`
   padding: 30px;
   margin-top: 30px;
   border-radius: 10px;
-  height: auto;
+  height: 280px;
+  overflow: auto;
 `
 
 const TutorialButton = styled.button`
@@ -117,6 +132,7 @@ const TutorialButton = styled.button`
   margin-top: 20px;
   float: right;
   width: 30%;
+  cursor: pointer;
   justify-content: center;
 
   &:hover{

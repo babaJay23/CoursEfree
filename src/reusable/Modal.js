@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import styled from 'styled-components';
 import { useForm } from 'react-hook-form';
+import { AiFillCloseCircle } from 'react-icons/ai';
 import './Modal.css';
 
 const Modal = ({ handleClose, show }) =>{
@@ -24,12 +25,10 @@ const Modal = ({ handleClose, show }) =>{
 
   const showHideClassName = show ? 'modal display-block' : 'modal display-none';
   return (
-    <ModalContainer className={showHideClassName}>
-      <ModalContent>
-      <CloseIcon onClick={handleClose}>X</CloseIcon>
+    <div className={showHideClassName}>
+      <ModalForm onSubmit={handleSubmit(onFormSubmit)}>
       <Heading>Request a Callback</Heading>
       <ModalDescription>We can call you in 30 seconds, just enter  your number below</ModalDescription>
-      <ModalForm onSubmit={handleSubmit(onFormSubmit)}>
         <ModalFormInput 
         type="text" 
         value={name}
@@ -52,19 +51,16 @@ const Modal = ({ handleClose, show }) =>{
         />
         {errors.phone && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '10px' }}>Please enter valid Phone*</p>}
         <ModalButton type='submit'>Request</ModalButton>
+        <CloseIcon onClick={handleClose}><AiFillCloseCircle /></CloseIcon>
       </ModalForm>
-      </ModalContent>
-    </ModalContainer>
+    </div>
   )
 }
 
-const ModalContainer = styled.div`
-  display: flex;
-`
-
-const ModalContent = styled.div`
+const ModalForm = styled.form`
   position: fixed;
 	background: white;
+  border-top: 10px solid  #817dea;
 	width: 30%;
 	height: auto;
 	top: 50%;
@@ -73,23 +69,16 @@ const ModalContent = styled.div`
 	display: flex;
 	flex-direction: column;
 	padding: 30px;
+  z-index: -1;
 `
 
-const CloseIcon = styled.div`
+const CloseIcon = styled.i`
   position: absolute;
-  top: 0;
-  cursor: pointer;
-  background-color: red;
-  color: #fff;
-  padding: 5px;
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
-  right: 0;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  font-size: 0.8rem;
+	cursor: pointer;
+	font-size: 2rem;
+	top: 0%;
+	right: 0%;
+  z-index: 1;
 `
 
 const Heading = styled.h1`
@@ -102,13 +91,6 @@ const ModalDescription = styled.p`
   line-height: 1.5;
   font-weight: 500;
   margin-top:30px;
-`
-
-const ModalForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  padding-top: 20px;
 `
 
 const ModalFormInput = styled.input`
