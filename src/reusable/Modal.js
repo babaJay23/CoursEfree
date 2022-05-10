@@ -1,8 +1,9 @@
 import React, {useState} from 'react'
 import styled from 'styled-components';
 import { useForm } from 'react-hook-form';
+import './Modal.css';
 
-const Modal = () =>{
+const Modal = ({ handleClose, show }) =>{
 
   const { register, handleSubmit, formState: { errors } } = useForm();
 
@@ -20,8 +21,12 @@ const Modal = () =>{
   const onFormSubmit = (event) =>{
     event.preventDefault();
   }
+
+  const showHideClassName = show ? 'modal display-block' : 'modal display-none';
   return (
-    <ModalContainer className='modal'>
+    <ModalContainer className={showHideClassName}>
+      <ModalContent>
+      <CloseIcon onClick={handleClose}>X</CloseIcon>
       <Heading>Request a Callback</Heading>
       <ModalDescription>We can call you in 30 seconds, just enter  your number below</ModalDescription>
       <ModalForm onSubmit={handleSubmit(onFormSubmit)}>
@@ -48,17 +53,43 @@ const Modal = () =>{
         {errors.phone && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '10px' }}>Please enter valid Phone*</p>}
         <ModalButton type='submit'>Request</ModalButton>
       </ModalForm>
+      </ModalContent>
     </ModalContainer>
   )
 }
 
 const ModalContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  width: 30%;
-  border-top: 10px solid  #817dea;
-  margin: auto;
-  padding: 30px;
+`
+
+const ModalContent = styled.div`
+  position: fixed;
+	background: white;
+	width: 30%;
+	height: auto;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	flex-direction: column;
+	padding: 30px;
+`
+
+const CloseIcon = styled.div`
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+  background-color: red;
+  color: #fff;
+  padding: 5px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  right: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 0.8rem;
 `
 
 const Heading = styled.h1`

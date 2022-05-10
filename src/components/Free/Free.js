@@ -1,7 +1,20 @@
 import React, {useState} from 'react'
 import styled from 'styled-components';
+import Modal from '../../reusable/Modal';
 
 const Free = () =>{
+
+  const [show, setShow] = useState(false)
+
+  const showModal = () => {
+		setShow(true);
+	};
+
+	// function to close the modal
+	const closeModal = () => {
+		setShow(false);
+	};
+
   return (
     <FreeContext className='free'>
       <FreeImage className="free-image">
@@ -10,7 +23,8 @@ const Free = () =>{
       <FreeText className="free-text">
         <FreeHeader>Win a FREE COURSE!</FreeHeader>
         <FreeDescription>Free courses contain industry-relevant content and practical tasks and projects.</FreeDescription>
-        <FreeButton>Good Luck!</FreeButton>
+        <Modal show={show} handleClose={closeModal} />
+        <FreeButton onClick={showModal}>Good Luck!</FreeButton>
       </FreeText>
     </FreeContext>
   )
