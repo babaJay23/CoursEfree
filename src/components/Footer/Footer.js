@@ -18,7 +18,7 @@ const handleFormSubmit = (e) =>{
   e.preventDefault()
 }
   return (
-    <FooterContainer className='footer'>
+    <FooterContainer className='footer' id="footer">
       <TopContainer className="top-container">
       <FooterIcons className="footer-icons">
         <FooterImage src="/img/footer.png" alt="logo" />

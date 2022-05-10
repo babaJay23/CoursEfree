@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
+import { Link } from 'react-scroll';
 
 const Navbar = ({about, trial, tutorials, free, testimonials}) => {
   return (
@@ -10,11 +11,12 @@ const Navbar = ({about, trial, tutorials, free, testimonials}) => {
       <NavigationContainer className="navigation">
         <NavBar>
           <UlContainer>
-            <ListItem>{about}</ListItem>
-            <ListItem>{trial}</ListItem>
-            <ListItem>{tutorials}</ListItem>
-            <ListItem>{free}</ListItem>
-            <ListItem>{testimonials}</ListItem>
+            <ListItem><Link to="about">{about}</Link></ListItem>
+            <ListItem><Link to="trial">{trial}</Link></ListItem>
+            <ListItem><Link to="tutorials">{tutorials}</Link></ListItem>
+            <ListItem><Link to="free">{free}</Link></ListItem>
+            <ListItem><Link to="testimonials">{testimonials}</Link></ListItem>
+            <LoginLink><Link to="/login">Log In</Link></LoginLink>
           </UlContainer>
         </NavBar>
       </NavigationContainer>
@@ -54,8 +56,8 @@ const NavBar = styled.nav`
 
 const UlContainer= styled.ul`
   display: flex;
-  justify-content: space-around;
-  min-width: 60%;
+  justify-content: space-evenly;
+  min-width: 70%;
   align-items: center;
 
 `
@@ -69,6 +71,21 @@ const ListItem = styled.li`
   justify-content: center;
   padding: 15px;
   cursor: pointer;
+`
+
+const LoginLink = styled.li`
+  list-style: none;
+  display:flex;
+  width: 100%;
+  font-size: .9rem;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  cursor: pointer;
+  background-color: #817dea;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 700;
 `
 
 export default Navbar;

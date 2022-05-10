@@ -4,7 +4,7 @@ import CountUp from 'react-countup';
 
 const Trial = () => {
   return (
-    <TrialContainer className='trial-container'>
+    <TrialContainer className='trial-container' id="trial">
       <SectionHeader className="section-header">
         <H3>Included in Your</H3>
         <div className="bold">

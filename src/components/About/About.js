@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const  About = () => {
   return (
-    <AboutSection className='about'>
+    <AboutSection className='about' id="about">
       <AboutText className="about-text">
         <AboutHeading>Learn something new every day</AboutHeading>
         <AboutDescription>From marketing skills to dancing moves - our tutorials teach you how to do nearly everything. Start learning today!</AboutDescription>
@@ -29,7 +29,7 @@ const AboutSection = styled.div`
    align-items: flex-start;
    justify-content: center;
    padding: 20px;
-   margin-top: 60px;
+   margin-top: 120px;
    padding-bottom: 50px;
 
 `
@@ -38,7 +38,7 @@ const AboutText = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-top: 30px;
+  margin-top: 100px;
   margin-left: 70px;
 `
 
@@ -73,7 +73,7 @@ const TutorialButton = styled.button`
   font-weight: 700;
 
   &:hover{
-    border: none;
+    border:2px solid #0bce97;;
     background-color: #0bce97;
     color: #fff;
   }
