@@ -5,6 +5,7 @@ import Navbar from './components/Navbar/Navbar';
 import Trial from './components/Trial/Trial';
 import Tutorial from './components/Tutorials/Tutorial';
 import Free from './components/Free/Free';
+import Footer from './components/Footer/Footer';
 const  App = () => {
   return (
     <div className="App">
@@ -14,6 +15,7 @@ const  App = () => {
       <Trial />
       <Tutorial text={'Try Now'} />
       <Free />
+      <Footer />
     </div>
   );
 }

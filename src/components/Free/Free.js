@@ -63,6 +63,7 @@ const FreeButton = styled.button`
   width: 30%;
   justify-content: center;
   font-weight: 700;
+  font-size: 1rem;
   background-color: #817dea;
   border-radius: 10px;
 
