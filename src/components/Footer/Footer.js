@@ -5,6 +5,7 @@ import styled from 'styled-components';
 const Footer = () => {
   return (
     <FooterContainer className='footer'>
+      <TopContainer className="top-container">
       <FooterIcons className="footer-icons">
         <FooterImage src="/img/footer.png" alt="logo" />
 
@@ -33,6 +34,11 @@ const Footer = () => {
             <FormButton type='submit'>Subscribe</FormButton>
           </SubscribeForm>
         </FooterForm>
+      </TopContainer>
+      <BottomSection className="bottom-section">
+          <HR />
+          <p style={{ marginTop: '20px', fontSize: '0.8rem' }}>Copyright © 2022. All Rights Reserved.</p>
+      </BottomSection>
     </FooterContainer>
   )
 }
@@ -42,6 +48,15 @@ const FooterContainer = styled.div`
   background-color: #1a2b2a;
   width: 100%;
   padding: 100px;
+  justify-content: space-around;
+  flex-direction: column;
+  color: #fff;
+`
+
+const TopContainer = styled.div`
+  display: flex;
+  background-color: #1a2b2a;
+  width: 100%;
   justify-content: space-around;
   color: #fff;
 `
@@ -110,6 +125,27 @@ const FormButton = styled.button`
     background-color: #817dea;
   }
 `
+
+const BottomSection = styled.div`
+  display: flex;
+  background-color: #1a2b2a;
+  width: 100%;
+  padding: 0px 100px;
+  justify-content: space-around;
+  flex-direction: column;
+  color: #fff;
+  margin-top: 50px;
+`
+
+const HR = styled.hr`
+  border: none;
+  height: 0.5px;
+  background-color: #817dea;
+`
+
+
+
+
 
 
 
