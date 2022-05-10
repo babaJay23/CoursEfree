@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const  About = () => {
   return (
-    <AboutSection className='about'>
+    <AboutSection className='about' id="about">
       <AboutText className="about-text">
         <AboutHeading>Learn something new every day</AboutHeading>
         <AboutDescription>From marketing skills to dancing moves - our tutorials teach you how to do nearly everything. Start learning today!</AboutDescription>

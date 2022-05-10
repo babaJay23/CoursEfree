@@ -16,7 +16,7 @@ const Free = () =>{
 	};
 
   return (
-    <FreeContext className='free'>
+    <FreeContext className='free' id="free">
       <FreeImage className="free-image">
         <img src="/img/free.png" alt="free" />
       </FreeImage>

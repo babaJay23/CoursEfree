@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
+import { Link } from 'react-scroll';
 
 const Navbar = ({about, trial, tutorials, free, testimonials}) => {
   return (
@@ -10,11 +11,11 @@ const Navbar = ({about, trial, tutorials, free, testimonials}) => {
       <NavigationContainer className="navigation">
         <NavBar>
           <UlContainer>
-            <ListItem>{about}</ListItem>
-            <ListItem>{trial}</ListItem>
-            <ListItem>{tutorials}</ListItem>
-            <ListItem>{free}</ListItem>
-            <ListItem>{testimonials}</ListItem>
+            <ListItem><Link to="about">{about}</Link></ListItem>
+            <ListItem><Link to="trial">{trial}</Link></ListItem>
+            <ListItem><Link to="tutorials">{tutorials}</Link></ListItem>
+            <ListItem><Link to="free">{free}</Link></ListItem>
+            <ListItem><Link to="testimonials">{testimonials}</Link></ListItem>
           </UlContainer>
         </NavBar>
       </NavigationContainer>

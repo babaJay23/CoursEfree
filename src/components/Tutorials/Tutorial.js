@@ -53,7 +53,7 @@ const Tutorial = ({text}) =>{
 
 
   return (
-    <TutorialSection className='tutorial-section'>
+    <TutorialSection className='tutorial-section' id="tutorials">
       <TutorialHeading>Our Best Tutorials</TutorialHeading>
       <HeaderDescription>From marketing skills to dancing moves - our tutorials teach you how to do nearly everything. Start learning today!</HeaderDescription>
       <DescriptionContainer DescriptionContainer className="section-description">
