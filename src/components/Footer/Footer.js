@@ -1,8 +1,22 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { FaFacebookF, FaInstagram, FaTwitter} from 'react-icons/fa';
 import styled from 'styled-components';
+import { useForm } from 'react-hook-form';
+
 
 const Footer = () => {
+
+  const { register, handleSubmit, formState: { errors } } = useForm();
+
+  const [email, setEmail] = useState("");
+
+  const handleInputChange = (event) =>{
+    setEmail(event.target.value)
+}
+
+const handleFormSubmit = (e) =>{
+  e.preventDefault()
+}
   return (
     <FooterContainer className='footer'>
       <TopContainer className="top-container">
@@ -29,8 +43,18 @@ const Footer = () => {
 
         <FooterForm className="footer-form">
           <p style={{  fontSize: '0.8rem' }}>Receive news right on your email</p>
-          <SubscribeForm>
-            <FormInput type="text" placeholder='Enter your e-mail here*'/>
+          <SubscribeForm onSubmit={handleSubmit(handleFormSubmit)}>
+            <FormInput 
+            type="text"
+            value={email} 
+           {...register('email', {
+             required: true,
+             pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ 
+            })}
+           onChange={handleInputChange}  
+            placeholder='Enter your e-mail here*'
+            />
+            {errors.email && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '10px' }}>Please enter valid Email*</p>}
             <FormButton type='submit'>Subscribe</FormButton>
           </SubscribeForm>
         </FooterForm>
@@ -93,7 +117,7 @@ const FooterForm = styled.div`
   width: 40%;
 `
 
-const SubscribeForm = styled.div`
+const SubscribeForm = styled.form`
   display: flex;
   flex-direction: column;
   margin-top: 20px;
