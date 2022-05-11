@@ -32,7 +32,7 @@ const Free = () =>{
 
 const FreeContext = styled.div`
   padding: 100px 0px;
-  width: 70%;
+  width: 100%;
   margin: auto;
   justify-content: center;
   display: flex;
@@ -40,15 +40,15 @@ const FreeContext = styled.div`
 
 const FreeImage = styled.div`
   display: flex;
-  width: 40%;
+  width: 50%;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 `
 
 const FreeText = styled.div`
   display: flex;
   margin-top: 30px;
-  width: 80%;
+  width: 50%;
   padding: 0px 30px;
   flex-direction: column;
 `

@@ -47,7 +47,7 @@ const AboutHeading = styled.h1`
   margin-top: 70px
   font-weight: 900;
   font-size: 2.5rem;
-  width: 100%;
+  width: 90%;
 `
 
 const AboutDescription = styled.p`
