@@ -56,7 +56,7 @@ const NavBar = styled.nav`
 
 const UlContainer= styled.ul`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   min-width: 70%;
   align-items: center;
 
@@ -65,7 +65,6 @@ const UlContainer= styled.ul`
 const ListItem = styled.li`
   list-style: none;
   display:flex;
-  width: 100%;
   font-size: .9rem;
   align-items: center;
   justify-content: center;
@@ -76,7 +75,6 @@ const ListItem = styled.li`
 const LoginLink = styled.li`
   list-style: none;
   display:flex;
-  width: 100%;
   font-size: .9rem;
   align-items: center;
   justify-content: center;

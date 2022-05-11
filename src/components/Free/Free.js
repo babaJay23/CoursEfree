@@ -48,7 +48,7 @@ const FreeImage = styled.div`
 const FreeText = styled.div`
   display: flex;
   margin-top: 30px;
-  width: 60%;
+  width: 80%;
   padding: 0px 30px;
   flex-direction: column;
 `
@@ -64,6 +64,7 @@ const FreeDescription = styled.p`
   font-size: 1.2rem;
   font-weight: 500;
   line-height: 1.5;
+  width: 70%;
 `
 
 const FreeButton = styled.button`
