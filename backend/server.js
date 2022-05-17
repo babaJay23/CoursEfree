@@ -12,6 +12,8 @@ const userRoute = require('./routes/User');
 
 // middleware
 app.use('user', userRoute);
+app.use(bodyParser.json());
+
 app.use(express.json());
 app.use(cors());
 require('dotenv').config();
