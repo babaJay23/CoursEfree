@@ -6,10 +6,16 @@ const bcrypt = require('bcrypt');
 
 const app = express();
 
+// routes
+const userRoute = require('./routes/User');
+
+
 // middleware
+app.use('user', userRoute);
 app.use(express.json());
 app.use(cors());
 require('dotenv').config();
+
 
 // connect to the database
 const DB_URL = process.env.DATABASE_URL;
