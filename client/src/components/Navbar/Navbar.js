@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
-import { Link } from 'react-scroll';
+// import {Link } from 'react-scroll';
+import { Link} from 'react-router-dom'
 
 const Navbar = ({about, trial, tutorials, free, testimonials}) => {
   return (
-    <HeaderContainer className='header'>
+      <HeaderContainer className='header'>
       <LogoContainer className="logo">
         <img src="logo.png" style={{ cursor: 'pointer' }} alt="logo" />
       </LogoContainer>
@@ -15,7 +16,6 @@ const Navbar = ({about, trial, tutorials, free, testimonials}) => {
             <ListItem><Link to="trial">{trial}</Link></ListItem>
             <ListItem><Link to="tutorials">{tutorials}</Link></ListItem>
             <ListItem><Link to="free">{free}</Link></ListItem>
-            <ListItem><Link to="testimonials">{testimonials}</Link></ListItem>
             <LoginLink><Link to="/login">Log In</Link></LoginLink>
           </UlContainer>
         </NavBar>
