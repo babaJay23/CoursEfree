@@ -17,7 +17,7 @@ const Login = () =>{
 
           <div className="form-group">
             <label htmlFor="password">Password</label>
-            <input type="text" placeholder='enter your password'/>
+            <input type="password" placeholder='enter your password'/>
           </div>
 
           <div className="form-action">
@@ -35,7 +35,7 @@ const Login = () =>{
               <button>Login</button>
             </div>
             <div className="register">
-              <Link to="/register">Sign Up</Link>
+              <Link to="/register" id='register'>Sign Up</Link>
             </div>
           </div>
         </form>
