@@ -1,9 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import './Login.css';
 
 const Login = () =>{
   return (
     <div className='login'>
+        <div className="login-form">
         <h3>Welcome to CoursEfree to learn some of the valuable skills</h3>
         <p>If you already have an account, please sign in below.</p>
 
@@ -21,14 +23,14 @@ const Login = () =>{
           <div className="form-action">
             <div className="check">
             <input type="checkbox" name="remember-me" id="remember" />
-            <p>Remember Me.</p>
+            <p style={{ marginLeft: '10px' }}>Remember Me.</p>
             </div>
             <div className="forgot">
               <Link to="/reset">Forgot Password?</Link>
             </div>
           </div>
 
-          <div className="form-btm">
+          <div className="form-btn">
             <div className="login-btn">
               <button>Login</button>
             </div>
@@ -37,6 +39,10 @@ const Login = () =>{
             </div>
           </div>
         </form>
+        </div>
+        {/* <div className="login-image">
+          <img src="/img/login.jpg" alt="login" />
+        </div> */}
     </div>
   )
 }
