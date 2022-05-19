@@ -9,6 +9,7 @@ const Register = () =>{
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [username, setUserName] = useState("");
 
 
   const handleLoginForm = (event) =>{
@@ -23,6 +24,19 @@ const Register = () =>{
         <p>If you already have an account, please sign in below.</p>
 
         <form onSubmit={handleSubmit(handleLoginForm)}>
+          <div className="form-group">
+            <label htmlFor="username">Username</label>
+            <input type="text" 
+              placeholder='enter username'
+              value={username}
+              onChange={(event) => setUserName(event.target.value)}
+              {...register('username', {
+                required: true,
+                pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ 
+              })}
+            />{errors.username && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '10px' }}>Please enter Username*</p>}
+          </div>
+
           <div className="form-group">
             <label htmlFor="email">Email</label>
             <input type="text" 
