@@ -1,4 +1,4 @@
-.login{
+.register{
   display: flex;
   padding: 100px;
   width: 100%;
@@ -6,26 +6,26 @@
   margin-top: 3px;
 }
 
-.login-form{
+.register-form{
   display: flex;
   flex-direction: column;
   width: 50%;
 }
 
-.login-form h3{
+.register-form h3{
   display: flex;
   width: 100%;
   font-size: 3rem;
 }
 
-.login-form p{
+.register-form p{
   display: flex;
   font-size: .8rem;
   padding: 10px 0px;
   margin-top: 10px;
 }
 
-.login-form form{
+.register-form form{
   display: flex;
   width: 50%;
   flex-direction: column;
@@ -36,18 +36,18 @@
   height: auto;
 }
 
-.login-form form .form-group{
+.register-form form .form-group{
   display: flex;
   flex-direction: column;
   margin-top: 10px;
   width: 100%;
 }
 
-.login-form form .form-group label{
+.register-form form .form-group label{
   font-size: .8rem;
 }
 
-.login-form form .form-group input{
+.register-form form .form-group input{
   padding: 18px;
   margin-top: 5px;
   outline: none;
@@ -68,21 +68,20 @@
   align-items: center;
 }
 
-.form-btn{
+.btns{
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   width: 100%;
   margin-top: 30px;
-  align-items: center; 
+  align-items: center;
 }
 
-.form-btn .login-btn, .sign-up{
+.btns .btn, .btns .login-link{
   display: flex;
   width: 50%;
 }
 
-
-.form-btn .login-btn button{
+.btns .btn button{
   display: flex;
   padding: 18px;
   border: none;
@@ -97,11 +96,11 @@
   cursor: pointer;
 }
 
-.form-btn .login-btn button:hover{
+.btns .btn button:hover{
   background-color: #817dea;
 }
 
-.register-link{
+#login{
   display: flex;
   padding: 18px;
   border: none;
@@ -119,9 +118,7 @@
   font-size: .8rem;
 }
 
-.register-link:hover{
+#login:hover{
   background-color: #0bce97;
 }
-
-
 

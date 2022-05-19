@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import './Login.css';
+import './Register.css'
 
-const Login = () =>{
+const Register = () =>{
 
   const { register, handleSubmit, formState: { errors } } = useForm();
 
@@ -13,10 +13,12 @@ const Login = () =>{
 
   const handleLoginForm = (event) =>{
     event.preventDefault();
-  }
+  } 
+
   return (
-    <div className='login'>
-        <div className="login-form">
+    
+    <div className='register'>
+        <div className="register-form">
         <h3>Welcome to CoursEfree to learn some of the valuable skills</h3>
         <p>If you already have an account, please sign in below.</p>
 
@@ -56,12 +58,12 @@ const Login = () =>{
             </div>
           </div>
 
-          <div className="form-btn">
-            <div className="login-btn">
-              <button type='submit'>Login</button>
+          <div className="btns">
+            <div className="btn">
+              <button type='submit'>Sign Up</button>
             </div>
-            <div className="sign-up">
-              <Link to="/register" class='register-link'>Sign Up</Link>
+            <div className="login-link">
+              <Link to="/login" id='login'>Log In</Link>
             </div>
           </div>
         </form>
@@ -70,4 +72,4 @@ const Login = () =>{
   )
 }
 
-export default Login;
+export default Register;
