@@ -1,26 +1,42 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import './Login.css';
+import './Register.css'
 
-const Login = () =>{
+const Register = () =>{
 
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [username, setUserName] = useState("");
 
 
   const handleLoginForm = (event) =>{
     event.preventDefault();
-  }
+  } 
+
   return (
-    <div className='login'>
-        <div className="login-form">
+    
+    <div className='register'>
+        <div className="register-form">
         <h3>Welcome to CoursEfree to learn some of the valuable skills</h3>
         <p>If you already have an account, please sign in below.</p>
 
         <form onSubmit={handleSubmit(handleLoginForm)}>
+          <div className="form-group">
+            <label htmlFor="username">Username</label>
+            <input type="text" 
+              placeholder='enter username'
+              value={username}
+              onChange={(event) => setUserName(event.target.value)}
+              {...register('username', {
+                required: true,
+                pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ 
+              })}
+            />{errors.username && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '10px' }}>Please enter Username*</p>}
+          </div>
+
           <div className="form-group">
             <label htmlFor="email">Email</label>
             <input type="text" 
@@ -56,12 +72,12 @@ const Login = () =>{
             </div>
           </div>
 
-          <div className="form-btn">
-            <div className="login-btn">
-              <button type='submit'>Login</button>
+          <div className="btns">
+            <div className="btn">
+              <button type='submit'>Sign Up</button>
             </div>
-            <div className="sign-up">
-              <Link to="/register" class='register-link'>Sign Up</Link>
+            <div className="login-link">
+              <Link to="/login" id='login'>Log In</Link>
             </div>
           </div>
         </form>
@@ -70,4 +86,4 @@ const Login = () =>{
   )
 }
 
-export default Login;
+export default Register;

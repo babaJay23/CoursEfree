@@ -8,6 +8,7 @@ import Free from './components/Free/Free';
 import Footer from './components/Footer/Footer';
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Login from './components/Login/Login';
+import Register from './components/Register/Register';
 const  App = () => {
   return (
     <Router>
@@ -20,6 +21,7 @@ const  App = () => {
         <Route path="/tutorials" element={<Tutorial text={'Try Now'} />} />
         <Route path="/free" element={<Free />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
       <Footer />
     </div>
