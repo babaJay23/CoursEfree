@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
-// import {Link } from 'react-scroll';
-import { Link} from 'react-router-dom'
+import {Link } from 'react-scroll';
 
-const Navbar = ({about, trial, tutorials, free, testimonials}) => {
+const Navbar = ({about, trial, tutorials, free}) => {
   return (
       <HeaderContainer className='header'>
       <LogoContainer className="logo">

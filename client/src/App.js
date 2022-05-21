@@ -15,14 +15,14 @@ const  App = () => {
       <div className="App">
       <Navbar about={'About'} trial={'Trial'} tutorials={'Tutorials'} free={'Win a Course'} testimonials={'Testimonials'}/>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/trial" element={<Trial />} />
-        <Route path="/tutorials" element={<Tutorial text={'Try Now'} />} />
-        <Route path="/free" element={<Free />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>
+      <Home />
+      <About />
+      <Trial />
+      <Tutorial text={'Try Now'} />
+      <Free />
       <Footer />
     </div>
     </Router>
