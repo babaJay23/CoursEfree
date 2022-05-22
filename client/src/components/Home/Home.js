@@ -64,8 +64,8 @@ const SectionDescription = styled.div`
   display: flex;
   flex-direction: column;
   width: 50%;
-  padding: 20px;
   height: auto;
+  margin-left: 30px;
 `
 const Heading = styled.h1`
   margin-top: 30px;
@@ -75,7 +75,7 @@ const Heading = styled.h1`
 
 const Description = styled.p`
   font-size: 1rem;
-  width: 60%;
+  width: 70%;
   padding-top: 30px; 
   font-weight: 500;
   line-height: 1.5;
