@@ -1,17 +1,17 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useForm } from 'react-hook-form';
-const Home = ()  =>{
+const Home = () => {
 
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const [email, setEmail] = useState("");
 
-  const handleInputChange = (event) =>{
-      setEmail(event.target.value)
+  const handleInputChange = (event) => {
+    setEmail(event.target.value)
   }
 
-  const handleFormSubmit = (e) =>{
+  const handleFormSubmit = (e) => {
     e.preventDefault()
   }
 
@@ -23,17 +23,17 @@ const Home = ()  =>{
       <SectionDescription className="section-description">
         <Heading>Start your free trial</Heading>
         <Description>Subscribe and start learning today! Your free trial includes 14-day unlimited watches.</Description>
-        <Form  onSubmit={handleSubmit(handleFormSubmit)}>
+        <Form onSubmit={handleSubmit(handleFormSubmit)}>
           <Input type="email"
-           value={email} 
-           {...register('email', {
-             required: true,
-             pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ 
+            value={email}
+            {...register('email', {
+              required: true,
+              pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
             })}
-           onChange={handleInputChange} 
-           placeholder='Enter your e-mail here*'
-           />
-           {errors.email && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '10px' }}>Please enter valid Email*</p>}
+            onChange={handleInputChange}
+            placeholder='Enter your e-mail here*'
+          />
+          {errors.email && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '10px' }}>Please enter valid Email*</p>}
           <Button type='submit'>Subscribe</Button>
         </Form>
       </SectionDescription>
@@ -49,7 +49,7 @@ const HomeContainer = styled.div`
 `
 const SectionImage = styled.div`
   display: flex;
-  width: 40%;
+  width: 50%;
 `
 
 const Image = styled.img`
@@ -64,23 +64,25 @@ const SectionDescription = styled.div`
   display: flex;
   flex-direction: column;
   width: 50%;
-  padding: 20px;
+  height: auto;
+  margin-left: 30px;
 `
 const Heading = styled.h1`
   margin-top: 30px;
-  font-size: 3.5rem;
+  font-size: 3rem;
   width: 100%;
 `
 
 const Description = styled.p`
   font-size: 1rem;
-  width: 60%;
+  width: 70%;
   padding-top: 30px; 
   font-weight: 500;
   line-height: 1.5;
+  height: auto;
 `
 
-const Form= styled.form`
+const Form = styled.form`
   margin-top: 30px;
   display: flex;
   flex-direction: column;
