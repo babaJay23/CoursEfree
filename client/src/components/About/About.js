@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
-import { Link } from 'react-router-dom'
+import {Link } from 'react-scroll';
 
 const  About = () => {
   return (
@@ -12,8 +12,8 @@ const  About = () => {
           CoursEfree is dedicated to always provide an excellent level of teaching, innovative equipment and research, just as well as the personal intellectual growth for each of its students. All that is possible within our diverse academic community.
         </AboutDescription>
         <ActionContainer className="action">
-          <TutorialButton>Tutorials</TutorialButton>
-          <CategoryButton style={{ marginLeft: '50px' }}>Categories</CategoryButton>
+            <ListItem><Link to="tutorials">Tutorials</Link></ListItem>
+            <ListItem style={{ marginLeft: '20px' }}><Link to="trial">Categories</Link></ListItem>
         </ActionContainer>
       </AboutText>
       <SectionImage className="about-image">
@@ -34,6 +34,7 @@ const AboutSection = styled.div`
    padding-bottom: 50px;
 
 `
+
 
 const AboutText = styled.div`
   display: flex;
@@ -64,7 +65,48 @@ const ActionContainer = styled.div`
   width: 70%;
 `
 
-const TutorialButton = styled.button`
+// const TutorialButton = styled.button`
+//   padding: 20px;
+//   width: 50%;
+//   cursor: pointer;
+//   border: 2px solid #000;
+//   outline: none;
+//   border-radius: 10px;
+//   font-weight: 700;
+
+//   &:hover{
+//     border:2px solid #0bce97;;
+//     background-color: #0bce97;
+//     color: #fff;
+//   }
+// `
+
+// const CategoryButton = styled.button`
+//   padding: 20px;
+//   width: 50%;
+//   cursor: pointer;
+//   border: none;
+//   outline: none;
+//   border-radius: 10px;
+//   font-weight: 700;
+//   color: #fff;
+//   background-color: #0bce97;
+
+//   &:hover{
+//     border: 2px solid #000;
+//     background-color: transparent;
+//     color: #000;
+//   }
+// `
+
+const ListItem = styled.li`
+  list-style: none;
+  display:flex;
+  font-size: .9rem;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  cursor: pointer;
   padding: 20px;
   width: 50%;
   cursor: pointer;
@@ -77,24 +119,6 @@ const TutorialButton = styled.button`
     border:2px solid #0bce97;;
     background-color: #0bce97;
     color: #fff;
-  }
-`
-
-const CategoryButton = styled.button`
-  padding: 20px;
-  width: 50%;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  border-radius: 10px;
-  font-weight: 700;
-  color: #fff;
-  background-color: #0bce97;
-
-  &:hover{
-    border: 2px solid #000;
-    background-color: transparent;
-    color: #000;
   }
 `
 
