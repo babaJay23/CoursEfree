@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useForm } from 'react-hook-form';
+import Swal from "sweetalert2";
+
 const Home = () => {
 
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit, formState: { errors, success } } = useForm();
 
   const [email, setEmail] = useState("");
 
@@ -12,8 +14,20 @@ const Home = () => {
   }
 
   const handleFormSubmit = (e) => {
-    e.preventDefault()
+
+    if(email !== ''){
+
+      Swal.fire({
+        title: 'Wow!',
+        timer: 2000,
+        position: 'fixed',
+        text: 'Thank you for subscribing to our newsletter!',
+      })
+
+    }
+    setEmail("");
   }
+
 
   return (
     <HomeContainer className='home'>
