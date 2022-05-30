@@ -46,6 +46,7 @@ const HomeContainer = styled.div`
   width: 100%;
   padding-top: 70px;
   height: 80vh;
+  margin-top: 50px;
 `
 const SectionImage = styled.div`
   display: flex;

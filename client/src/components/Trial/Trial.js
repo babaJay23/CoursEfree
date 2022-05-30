@@ -39,7 +39,7 @@ const Trial = () => {
 const TrialContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 100%;
   margin: auto;
   justify-content: center;
   align-items: center;
@@ -49,8 +49,9 @@ const TrialContainer = styled.div`
 const SectionHeader = styled.div`
   display: flex;
   align-items: center;
-  width: 60%;
+  width: 100%;
   padding-top: 70px;
+  justify-content: center;
 `
 
 const H3 = styled.h3`
@@ -65,13 +66,15 @@ const H1 = styled.h1`
   font-size: 5.5rem;
   font-weight: 900;
   color: #817dea;
+  width: 100%;
 `
 
 const SectionImages = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  align-items: center;
   width: 100%;
-  margin-top: 100px;
+  margin-top: 70px;
 `
 
 const TrialDescription = styled.div`
