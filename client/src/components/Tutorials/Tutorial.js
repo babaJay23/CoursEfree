@@ -83,7 +83,7 @@ const Tutorial = ({text}) =>{
 
 const TutorialSection = styled.div`
   display: flex;
-  width: 60%;
+  width: 100%;
   flex-direction: column;
   margin: auto;
   padding: 100px 0px;
@@ -100,7 +100,7 @@ const HeaderDescription = styled.p`
   display: flex;
   width: 70%;
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 500;
   margin-top: 20px;
   line-height: 1.5;
@@ -109,15 +109,17 @@ const HeaderDescription = styled.p`
 const DescriptionContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  margin-top: 50px;
+  margin-top: 30px;
   grid-gap: 20px;
+  padding: 50px;
+  width: 80%;
 `
 
 const SectionContents = styled.div`
   display: flex;
   flex-direction: column;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 50px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-  padding: 20px;
+  padding: 50px 20px;
   margin-top: 30px;
   border-radius: 10px;
   overflow: auto;
