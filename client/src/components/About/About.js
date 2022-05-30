@@ -12,8 +12,8 @@ const  About = () => {
           CoursEfree is dedicated to always provide an excellent level of teaching, innovative equipment and research, just as well as the personal intellectual growth for each of its students. All that is possible within our diverse academic community.
         </AboutDescription>
         <ActionContainer className="action">
-            <ListItem><Link to="tutorials">Tutorials</Link></ListItem>
-            <ListItem style={{ marginLeft: '20px' }}><Link to="trial">Categories</Link></ListItem>
+            <TutorialListItem><Link to="tutorials">Tutorials</Link></TutorialListItem>
+            <CategoryListItem style={{ marginLeft: '20px' }}><Link to="trial">Categories</Link></CategoryListItem>
         </ActionContainer>
       </AboutText>
       <SectionImage className="about-image">
@@ -65,41 +65,25 @@ const ActionContainer = styled.div`
   width: 70%;
 `
 
-// const TutorialButton = styled.button`
-//   padding: 20px;
-//   width: 50%;
-//   cursor: pointer;
-//   border: 2px solid #000;
-//   outline: none;
-//   border-radius: 10px;
-//   font-weight: 700;
+const CategoryListItem = styled.button`
+  padding: 20px;
+  width: 50%;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  font-weight: 700;
+  color: #fff;
+  background-color: #0bce97;
 
-//   &:hover{
-//     border:2px solid #0bce97;;
-//     background-color: #0bce97;
-//     color: #fff;
-//   }
-// `
+  &:hover{
+    border: 2px solid #000;
+    background-color: transparent;
+    color: #000;
+  }
+`
 
-// const CategoryButton = styled.button`
-//   padding: 20px;
-//   width: 50%;
-//   cursor: pointer;
-//   border: none;
-//   outline: none;
-//   border-radius: 10px;
-//   font-weight: 700;
-//   color: #fff;
-//   background-color: #0bce97;
-
-//   &:hover{
-//     border: 2px solid #000;
-//     background-color: transparent;
-//     color: #000;
-//   }
-// `
-
-const ListItem = styled.li`
+const TutorialListItem = styled.li`
   list-style: none;
   display:flex;
   font-size: .9rem;
