@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
-import {Link } from 'react-scroll';
+import {Link as ScrollLink } from 'react-scroll';
+import { Link as RouterLink } from "react-router-dom";
 
 const Navbar = ({about, trial, tutorials, free}) => {
   return (
@@ -11,11 +12,11 @@ const Navbar = ({about, trial, tutorials, free}) => {
       <NavigationContainer className="navigation">
         <NavBar>
           <UlContainer>
-            <ListItem><Link to="about">{about}</Link></ListItem>
-            <ListItem><Link to="trial">{trial}</Link></ListItem>
-            <ListItem><Link to="tutorials">{tutorials}</Link></ListItem>
-            <ListItem><Link to="free">{free}</Link></ListItem>
-            <LoginLink><Link to="/login">Log In</Link></LoginLink>
+            <ListItem><ScrollLink to="about">{about}</ScrollLink></ListItem>
+            <ListItem><ScrollLink to="trial">{trial}</ScrollLink></ListItem>
+            <ListItem><ScrollLink to="tutorials">{tutorials}</ScrollLink></ListItem>
+            <ListItem><ScrollLink to="free">{free}</ScrollLink></ListItem>
+            <LoginLink><RouterLink to="/login" style={{ textDecoration: 'none' }}>Log In</RouterLink></LoginLink>
           </UlContainer>
         </NavBar>
       </NavigationContainer>
