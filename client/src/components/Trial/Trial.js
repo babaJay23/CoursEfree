@@ -23,7 +23,7 @@ const Trial = () => {
         </TrialDescription>
         <TrialDescription className="description">
           <img src="/img/trial2.png" alt="trial2" />
-          <H3 style={{ marginTop: '20px' }}> 14 -day</H3>
+          <H3 style={{ marginTop: '20px' }}><CountUp end={14} /> -day</H3>
           <p style={{  marginTop: '10px', fontWeight: 500 }}>unlimited watching</p>
         </TrialDescription>
         <TrialDescription className="description">
