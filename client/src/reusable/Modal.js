@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import styled from 'styled-components';
 import { useForm } from 'react-hook-form';
 import { AiFillCloseCircle } from 'react-icons/ai';
+import Swal from "sweetalert2";
 import './Modal.css';
 
 const Modal = ({ handleClose, show }) =>{
@@ -11,16 +12,29 @@ const Modal = ({ handleClose, show }) =>{
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
 
-  const handleNameChange = (e) =>{
-    setName(e.target.value);
+  const handleNameChange = (event) =>{
+    setName(event.target.value);
   }
 
-  const handlePhoneChange = (e) =>{
-    setPhone(e.target.value);
+  const handlePhoneChange = (event) =>{
+    setPhone(event.target.value);
   }
 
-  const onFormSubmit = (event) =>{
-    event.preventDefault();
+  const onFormSubmit = () =>{
+    setName("");
+    setPhone("");
+
+    if(name !== '' && phone !== ''){
+
+      Swal.fire({
+        title: 'Wow!',
+        timer: 2000,
+        text: 'We will get back to you soon!',
+      })
+
+    }
+    setName("");
+    setPhone("");
   }
 
   const showHideClassName = show ? 'modal display-block' : 'modal display-none';
@@ -32,21 +46,21 @@ const Modal = ({ handleClose, show }) =>{
         <ModalFormInput 
         type="text" 
         value={name}
-        onChange={handleNameChange}
         {...register('name', {
           required: true
         })}
+        onChange={handleNameChange}
         placeholder='Name*'
         />
         {errors.name && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '10px' }}>Please enter Name*</p>}
         <ModalFormInput 
         type="tel" 
         value={phone}
-        onChange={handlePhoneChange}
         {...register('phone', {
           required: true,
           maxLength: 10
         })}
+        onChange={handlePhoneChange}
         placeholder='Phone*'
         />
         {errors.phone && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '10px' }}>Please enter valid Phone*</p>}

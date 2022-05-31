@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { FaFacebookF, FaInstagram, FaTwitter} from 'react-icons/fa';
 import styled from 'styled-components';
 import { useForm } from 'react-hook-form';
+import Swal from "sweetalert2";
 
 
 const Footer = () => {
@@ -16,6 +17,17 @@ const Footer = () => {
 
 const handleFormSubmit = (e) =>{
   e.preventDefault()
+  if(email !== ''){
+
+    Swal.fire({
+      title: 'Wow!',
+      timer: 2000,
+      position: 'fixed',
+      text: 'Thank you for subscribing to our newsletter!',
+    })
+
+  }
+  setEmail("");
 }
   return (
     <FooterContainer className='footer' id="footer">
