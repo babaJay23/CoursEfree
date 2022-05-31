@@ -1,9 +1,22 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
 import {Link as ScrollLink } from 'react-scroll';
-import { Link as RouterLink } from "react-router-dom";
+import Login from '../Login/Login';
+import Register from '../Register/Register';
 
 const Navbar = ({about, trial, tutorials, free}) => {
+
+  const [showLogin, setShowLogin] = useState(false)
+
+  const showLoginModal = () => {
+		setShowLogin(true);
+	};
+
+	// function to close the modal
+	const closeLoginModal = () => {
+		setShowLogin(false);
+	};
+
   return (
       <HeaderContainer className='header'>
       <LogoContainer className="logo">
@@ -16,10 +29,11 @@ const Navbar = ({about, trial, tutorials, free}) => {
             <ListItem><ScrollLink to="trial">{trial}</ScrollLink></ListItem>
             <ListItem><ScrollLink to="tutorials">{tutorials}</ScrollLink></ListItem>
             <ListItem><ScrollLink to="free">{free}</ScrollLink></ListItem>
-            <LoginLink><RouterLink to="/login" style={{ textDecoration: 'none' }}>Log In</RouterLink></LoginLink>
+            <LoginLink onClick={showLoginModal}>Log In</LoginLink>
           </UlContainer>
         </NavBar>
       </NavigationContainer>
+      <Login show={showLogin} handleClose={closeLoginModal} />
     </HeaderContainer>
   )
 } 
