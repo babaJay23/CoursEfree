@@ -1,25 +1,36 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import { AiFillCloseCircle } from 'react-icons/ai';
+import Login from '../Login/Login'
 import './Register.css'
 
-const Register = () =>{
+const Register = ({ handleClose, show }) =>{
 
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUserName] = useState("");
+  const [showRegisterForm, setShowRegisterForm] = useState(true);
+  const [showLoginForm, setShowLoginForm] = useState(false);
 
 
   const handleLoginForm = (event) =>{
     event.preventDefault();
   } 
 
+  const displayLoginForm = () =>{
+    setShowLoginForm(!false);
+    setShowRegisterForm(!true);
+}
+
+
+  const showHideClassName = show ? 'modal display-block' : 'modal display-none';
   return (
     
-    <div className='register'>
-        <div className="register-form">
+    <div className={showHideClassName} id="register">
+        { showRegisterForm && <div className="register-form">
         <h3>Welcome to CoursEfree to learn some of the valuable skills</h3>
         <p>If you already have an account, please sign in below.</p>
 
@@ -77,11 +88,17 @@ const Register = () =>{
               <button type='submit'>Sign Up</button>
             </div>
             <div className="login-link">
-              <Link to="/login" id='login'>Log In</Link>
+              <button id='login' onClick={displayLoginForm}>Log In</button>
             </div>
           </div>
+          <i onClick={handleClose}><AiFillCloseCircle /></i>
         </form>
         </div>
+        }
+        {/* login form */}
+        {
+          showLoginForm && <Login />
+        }
     </div>
   )
 }
