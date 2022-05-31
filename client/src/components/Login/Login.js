@@ -14,6 +14,18 @@ const Login = ({ handleClose, show }) =>{
   const [showRegisterForm, setShowRegisterForm] = useState(false);
   const [showLoginForm, setShowLoginForm] = useState(true);
 
+  const [showRegister, setshowRegister] = useState(false)
+
+  // const showRegisterModal = () => {
+	// 	showRegister(true);
+	// };
+
+	// function to close the modal
+	const closeRegisterModal = () => {
+		setshowRegister(false);
+	};
+
+
 
   const handleLoginForm = (event) =>{
     event.preventDefault();
@@ -23,6 +35,7 @@ const Login = ({ handleClose, show }) =>{
       setShowLoginForm(!true);
       setShowRegisterForm(!false);
   }
+
 
   const showHideClassName = show ? 'modal display-block' : 'modal display-none';
   return (
@@ -83,7 +96,7 @@ const Login = ({ handleClose, show }) =>{
 
         {/* register form */}
         {
-          showRegisterForm && <Register />
+          showRegisterForm && <Register show={showRegister} handleClose={closeRegisterModal}/>
         }
     </div>
   )

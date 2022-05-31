@@ -5,6 +5,26 @@
   margin-top: 3px;
 }
 
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.6);
+	display: flex;
+  z-index: 10;
+}
+
+.display-block {
+	display: block;
+}
+
+.display-none {
+	display: none;
+}
+
+
 .login-form{
   position: fixed;
 	background: white;
