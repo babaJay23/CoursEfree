@@ -81,7 +81,7 @@ const SectionDescription = styled.div`
   flex-direction: column;
   width: 50%;
   height: auto;
-  margin-left: 30px;
+  margin-left: 50px;
 `
 const Heading = styled.h1`
   margin-top: 30px;
