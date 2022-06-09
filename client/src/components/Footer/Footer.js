@@ -45,11 +45,11 @@ const handleFormSubmit = (e) =>{
         <Menu className="menu">
           <h3 style={{ fontWeight: 700 }}>Menu</h3>
           <ul>
-            <ListItems>About</ListItems>
-            <ListItems>Trial</ListItems>
-            <ListItems>Tutorials</ListItems>
-            <ListItems>Testimonials</ListItems>
-            <ListItems>Contacts</ListItems>
+            <ListItems><a href="about">About</a></ListItems>
+            <ListItems><a href="trial">Trial</a></ListItems>
+            <ListItems><a href="tutorials">Tutorials</a></ListItems>
+            <ListItems><a href="testimonials">Testimonials</a></ListItems>
+            <ListItems><a href="contacts">Contacts</a></ListItems>
           </ul>
         </Menu>
 
