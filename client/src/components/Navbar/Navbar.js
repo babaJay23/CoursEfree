@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
 import {Link as ScrollLink } from 'react-scroll';
-import Login from '../Login/Login';
+// import Login from '../Login/Login';
 
 const Navbar = ({about, trial, tutorials, free}) => {
 
@@ -32,7 +32,7 @@ const Navbar = ({about, trial, tutorials, free}) => {
           </UlContainer>
         </NavBar>
       </NavigationContainer>
-      <Login show={showLogin} handleClose={closeLoginModal} />
+      {/* <Login show={showLogin} handleClose={closeLoginModal} /> */}
     </HeaderContainer>
   )
 } 

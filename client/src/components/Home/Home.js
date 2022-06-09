@@ -61,6 +61,7 @@ const HomeContainer = styled.div`
   padding-top: 70px;
   height: 80vh;
   margin-top: 50px;
+  justify-content: space-between;
 `
 const SectionImage = styled.div`
   display: flex;
@@ -80,7 +81,7 @@ const SectionDescription = styled.div`
   flex-direction: column;
   width: 50%;
   height: auto;
-  margin-left: 30px;
+  margin-left: 50px;
 `
 const Heading = styled.h1`
   margin-top: 30px;
