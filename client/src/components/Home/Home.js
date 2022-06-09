@@ -21,7 +21,7 @@ const Home = () => {
         title: 'Wow!',
         timer: 2000,
         position: 'fixed',
-        text: 'Thank you for subscribing to our newsletter!',
+        text: 'Thank you for subscribing to our course! Please check your email to find course details.',
       })
 
     }
