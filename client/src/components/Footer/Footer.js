@@ -3,6 +3,7 @@ import { FaFacebookF, FaInstagram, FaTwitter} from 'react-icons/fa';
 import styled from 'styled-components';
 import { useForm } from 'react-hook-form';
 import Swal from "sweetalert2";
+import {Link as ScrollLink } from 'react-scroll';
 
 
 const Footer = () => {
@@ -45,11 +46,18 @@ const handleFormSubmit = (e) =>{
         <Menu className="menu">
           <h3 style={{ fontWeight: 700 }}>Menu</h3>
           <ul>
-            <ListItems><a href="about">About</a></ListItems>
-            <ListItems><a href="trial">Trial</a></ListItems>
-            <ListItems><a href="tutorials">Tutorials</a></ListItems>
-            <ListItems><a href="testimonials">Testimonials</a></ListItems>
-            <ListItems><a href="contacts">Contacts</a></ListItems>
+            <ListItems>
+              <ScrollLink to="about"><a href="about">About</a></ScrollLink>
+            </ListItems>
+            <ListItems>
+              <ScrollLink to="trial"><a href="trial">Trial</a></ScrollLink>
+            </ListItems>
+            <ListItems>
+              <ScrollLink to="tutorials"><a href="tutorials">Tutorials</a></ScrollLink>
+            </ListItems>
+            <ListItems>
+              <ScrollLink to="free"><a href="contacts">Contacts</a></ScrollLink>
+            </ListItems>
           </ul>
         </Menu>
 
@@ -120,6 +128,11 @@ const Menu = styled.div`
 const ListItems = styled.li`
   margin-top: 10px;
   font-size: 0.8rem;
+
+  a{
+    text-decoration: none;
+    color: #fff;
+  }
 `
 
 const FooterForm = styled.div`
