@@ -120,6 +120,11 @@ const Menu = styled.div`
 const ListItems = styled.li`
   margin-top: 10px;
   font-size: 0.8rem;
+
+  a{
+    text-decoration: none;
+    color: #fff;
+  }
 `
 
 const FooterForm = styled.div`
