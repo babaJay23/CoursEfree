@@ -12,6 +12,7 @@ const RegisterModal = ({ handleClose, show }) =>{
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [showRegisterForm, setShowRegisterForm] = useState(true);
   const [showLoginForm, setShowLoginForm] = useState(false);
@@ -23,8 +24,9 @@ const RegisterModal = ({ handleClose, show }) =>{
   }
 
   
-  const handleLoginForm = () => {
+  const handleRegisterForm = () => {
     setEmail("");
+    setUsername("");
     setPassword("");
 
     if(email !== '' && password !== ''){
@@ -37,6 +39,7 @@ const RegisterModal = ({ handleClose, show }) =>{
 
     }
     setEmail("");
+    setUsername("");
     setPassword("");
   }
 
@@ -46,7 +49,7 @@ const RegisterModal = ({ handleClose, show }) =>{
     <div className={showHideClassName}>
           {
             showRegisterForm && 
-            <ModalForm onSubmit={handleSubmit(handleLoginForm)}>
+            <ModalForm onSubmit={handleSubmit(handleRegisterForm)}>
           <Heading>Welcome to CoursEfree to learn some of the valuable skills</Heading>
           <ModalDescription>If you already have an account, please sign in below.</ModalDescription>
             <div className="form-group">
@@ -63,15 +66,15 @@ const RegisterModal = ({ handleClose, show }) =>{
             </div>
 
             <div className="form-group">
-              <label htmlFor="password">Password</label>
-              <ModalFormInput type="password"
-                placeholder='enter your password'
-                value={password}
-                onChange={(event) => setPassword(event.target.value)}
-                {...register('password', {
+              <label htmlFor="username">Username</label>
+              <ModalFormInput type="username"
+                placeholder='enter your username'
+                value={username}
+                onChange={(event) => setUsername(event.target.value)}
+                {...register('username', {
                   required: true,
                 })}
-              />{errors.password && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '10px' }}>Please enter Password*</p>}
+              />{errors.username && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '10px' }}>Please enter Password*</p>}
             </div>
 
             <div className="form-group">
@@ -83,7 +86,7 @@ const RegisterModal = ({ handleClose, show }) =>{
                 {...register('password', {
                   required: true,
                 })}
-              />{errors.password && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '10px' }}>Please enter Password*</p>}
+              />{errors.password && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '10px' }}>Please enter Username*</p>}
             </div>
 
 

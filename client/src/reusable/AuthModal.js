@@ -17,10 +17,6 @@ const AuthModal = ({ handleClose, show }) =>{
   const [showLoginForm, setShowLoginForm] = useState(true);
 
 
-  const switchForms = () =>{
-    setShowLoginForm(!true);
-    setShowRegisterForm(!false);
-  }
   const handleLoginForm = () => {
     setEmail("");
     setPassword("");
@@ -38,13 +34,18 @@ const AuthModal = ({ handleClose, show }) =>{
     setPassword("");
   }
 
+  const showRegister = () =>{
+    setShowLoginForm(!true);
+    setShowRegisterForm(!false);
+  }
+
 
   const showHideClassName = show ? 'modal display-block' : 'modal display-none';
   return (
     <div className={showHideClassName}>
           {
             showLoginForm && 
-            <ModalForm onSubmit={handleSubmit(handleLoginForm)}>
+          <ModalForm onSubmit={handleSubmit(handleLoginForm)}>
           <Heading>Welcome to CoursEfree to learn some of the valuable skills</Heading>
           <ModalDescription>If you already have an account, please sign in below.</ModalDescription>
             <div className="form-group">
@@ -87,12 +88,13 @@ const AuthModal = ({ handleClose, show }) =>{
                 <button type='submit'>Login</button>
               </div>
               <div className="sign-up">
-                <button class='register-link' onClick={switchForms}>Sign Up</button>
+                <button class='register-link' onClick={showRegister}>Sign Up</button>
               </div>
             </div>
             <CloseIcon onClick={handleClose}><AiFillCloseCircle /></CloseIcon>
           </ModalForm>
           }
+          
           {
             showRegisterForm && <RegisterModal />
           }
