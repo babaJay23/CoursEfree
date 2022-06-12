@@ -91,7 +91,7 @@ const ModalForm = styled.form`
   position: fixed;
 	background: white;
   border-top: 10px solid  #817dea;
-	width: 30%;
+	width: 50%;
 	height: auto;
 	top: 50%;
 	left: 50%;
@@ -130,25 +130,6 @@ const ModalFormInput = styled.input`
   border-radius: 10px;
   margin-top: 20px;
   width: 100%;
-`
-
-const ModalButton = styled.button`
-  display: flex;
-  margin-top: 20px;
-  padding: 20px;
-  justify-content: center;
-  width: 40%;
-  border: none;
-  border-radius: 10px;
-  color: #fff;
-  font-weight: 700;
-  background-color: #817dea;
-  font-size: 1rem;
-  cursor: pointer;
-  
-  &:hover{
-    background-color: #0bce97;
-  }
 `
 
 export default AuthModal;
