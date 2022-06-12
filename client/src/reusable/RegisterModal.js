@@ -5,22 +5,24 @@ import { AiFillCloseCircle } from 'react-icons/ai';
 import { useForm } from 'react-hook-form';
 import Swal from "sweetalert2";
 import './Modal.css';
-import RegisterModal from './RegisterModal';
+import AuthModal from './AuthModal';
 
-const AuthModal = ({ handleClose, show }) =>{
+const RegisterModal = ({ handleClose, show }) =>{
 
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [showRegisterForm, setShowRegisterForm] = useState(false);
-  const [showLoginForm, setShowLoginForm] = useState(true);
+  const [showRegisterForm, setShowRegisterForm] = useState(true);
+  const [showLoginForm, setShowLoginForm] = useState(false);
 
 
   const switchForms = () =>{
-    setShowLoginForm(!true);
-    setShowRegisterForm(!false);
+    setShowLoginForm(!false);
+    setShowRegisterForm(!true);
   }
+
+  
   const handleLoginForm = () => {
     setEmail("");
     setPassword("");
@@ -43,7 +45,7 @@ const AuthModal = ({ handleClose, show }) =>{
   return (
     <div className={showHideClassName}>
           {
-            showLoginForm && 
+            showRegisterForm && 
             <ModalForm onSubmit={handleSubmit(handleLoginForm)}>
           <Heading>Welcome to CoursEfree to learn some of the valuable skills</Heading>
           <ModalDescription>If you already have an account, please sign in below.</ModalDescription>
@@ -72,6 +74,19 @@ const AuthModal = ({ handleClose, show }) =>{
               />{errors.password && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '10px' }}>Please enter Password*</p>}
             </div>
 
+            <div className="form-group">
+              <label htmlFor="password">Password</label>
+              <ModalFormInput type="password"
+                placeholder='enter your password'
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+                {...register('password', {
+                  required: true,
+                })}
+              />{errors.password && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '10px' }}>Please enter Password*</p>}
+            </div>
+
+
             <div className="form-action">
               <div className="check">
                 <input type="checkbox" name="remember-me" id="remember" />
@@ -94,7 +109,7 @@ const AuthModal = ({ handleClose, show }) =>{
           </ModalForm>
           }
           {
-            showRegisterForm && <RegisterModal />
+            showLoginForm && <AuthModal />
           }
         </div>
   )
@@ -145,4 +160,4 @@ const ModalFormInput = styled.input`
   width: 100%;
 `
 
-export default AuthModal;
+export default RegisterModal;
