@@ -7,7 +7,7 @@ import Tutorial from './components/Tutorials/Tutorial';
 import Free from './components/Free/Free';
 import Footer from './components/Footer/Footer';
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import Login from './components/Login/Login';
+import Login from './reusable/auth/Login/Login';
 import Register from './components/Register/Register';
 const  App = () => {
   return (

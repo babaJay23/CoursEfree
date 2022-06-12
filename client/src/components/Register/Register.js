@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { AiFillCloseCircle } from 'react-icons/ai';
-import Login from '../Login/Login'
+// import Login from '../Login/Login'
 import './Register.css'
 
 const Register = ({ handleClose, show }) =>{
@@ -97,7 +97,7 @@ const Register = ({ handleClose, show }) =>{
         }
         {/* login form */}
         {
-          showLoginForm && <Login />
+          // showLoginForm && <Login />
         }
     </div>
   )
