@@ -7,7 +7,6 @@ import Tutorial from './components/Tutorials/Tutorial';
 import Free from './components/Free/Free';
 import Footer from './components/Footer/Footer';
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import Login from './reusable/auth/Login/Login';
 import Register from './components/Register/Register';
 const  App = () => {
   return (
@@ -15,7 +14,6 @@ const  App = () => {
       <div className="App">
       <Navbar about={'About'} trial={'Trial'} tutorials={'Tutorials'} free={'Win a Course'} testimonials={'Testimonials'}/>
       <Routes>
-        <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>
       <Home />
