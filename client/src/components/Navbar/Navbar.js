@@ -1,8 +1,21 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
 import {Link as ScrollLink } from 'react-scroll';
+import AuthModal from '../../reusable/AuthModal';
 
-const Navbar = ({about, trial, tutorials, free}) => {;
+const Navbar = ({about, trial, tutorials, free}) => {
+
+  const [show, setShow] = useState(false)
+
+  const showModal = () => {
+		setShow(true);
+	};
+
+	// function to close the modal
+	const closeModal = () => {
+		setShow(false);
+	};
+
 
   return (
       <HeaderContainer className='header'>
@@ -16,10 +29,11 @@ const Navbar = ({about, trial, tutorials, free}) => {;
             <ListItem><ScrollLink to="trial">{trial}</ScrollLink></ListItem>
             <ListItem><ScrollLink to="tutorials">{tutorials}</ScrollLink></ListItem>
             <ListItem><ScrollLink to="free">{free}</ScrollLink></ListItem>
-            <LoginLink>Log In</LoginLink>
+            <LoginLink onClick={showModal}>Log In</LoginLink>
           </UlContainer>
         </NavBar>
       </NavigationContainer>
+      <AuthModal show={show} handleClose={closeModal} />
     </HeaderContainer>
   )
 } 

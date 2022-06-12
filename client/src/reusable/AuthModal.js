@@ -1,11 +1,13 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
+import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { useForm } from 'react-hook-form';
 import { AiFillCloseCircle } from 'react-icons/ai';
-import './Login.css';
-import Register from '../Register/Register'
+import { useForm } from 'react-hook-form';
+import Swal from "sweetalert2";
+import './Modal.css';
+import RegisterModal from './RegisterModal';
 
-const Login = ({ handleClose, show }) => {
+const AuthModal = ({ handleClose, show }) =>{
 
   const { register, handleSubmit, formState: { errors } } = useForm();
 
@@ -14,24 +16,25 @@ const Login = ({ handleClose, show }) => {
   const [showRegisterForm, setShowRegisterForm] = useState(false);
   const [showLoginForm, setShowLoginForm] = useState(true);
 
-  const [showRegister, setshowRegister] = useState(false)
 
-  const showRegisterModal = () => {
-  	showRegister(true);
-  };
+  const handleLoginForm = () => {
+    setEmail("");
+    setPassword("");
 
-  // function to close the modal
-  const closeRegisterModal = () => {
-    setshowRegister(false);
-  };
+    if(email !== '' && password !== ''){
 
+      Swal.fire({
+        title: 'Wow!',
+        timer: 2000,
+        text: 'We will get back to you soon!',
+      })
 
-
-  const handleLoginForm = (event) => {
-    event.preventDefault();
+    }
+    setEmail("");
+    setPassword("");
   }
 
-  const displayRegisterForm = () => {
+  const showRegister = () =>{
     setShowLoginForm(!true);
     setShowRegisterForm(!false);
   }
@@ -39,16 +42,15 @@ const Login = ({ handleClose, show }) => {
 
   const showHideClassName = show ? 'modal display-block' : 'modal display-none';
   return (
-    <div className={showHideClassName} id="login-container">
-      {showLoginForm &&
-        <div className="login-form">
-          <h3>Welcome to CoursEfree to learn some of the valuable skills</h3>
-          <p>If you already have an account, please sign in below.</p>
-
-          <form onSubmit={handleSubmit(handleLoginForm)}>
+    <div className={showHideClassName}>
+          {
+            showLoginForm && 
+          <ModalForm onSubmit={handleSubmit(handleLoginForm)}>
+          <Heading>Welcome to CoursEfree to learn some of the valuable skills</Heading>
+          <ModalDescription>If you already have an account, please sign in below.</ModalDescription>
             <div className="form-group">
               <label htmlFor="email">Email</label>
-              <input type="text"
+              <ModalFormInput type="text"
                 placeholder='enter your email'
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
@@ -61,7 +63,7 @@ const Login = ({ handleClose, show }) => {
 
             <div className="form-group">
               <label htmlFor="password">Password</label>
-              <input type="password"
+              <ModalFormInput type="password"
                 placeholder='enter your password'
                 value={password}
                 onChange={(event) => setPassword(event.target.value)}
@@ -86,20 +88,63 @@ const Login = ({ handleClose, show }) => {
                 <button type='submit'>Login</button>
               </div>
               <div className="sign-up">
-                <button class='register-link' onClick={displayRegisterForm}>Sign Up</button>
+                <button class='register-link' onClick={showRegister}>Sign Up</button>
               </div>
             </div>
-            <i onClick={handleClose}><AiFillCloseCircle /></i>
-          </form>
+            <CloseIcon onClick={handleClose}><AiFillCloseCircle /></CloseIcon>
+          </ModalForm>
+          }
+          
+          {
+            showRegisterForm && <RegisterModal />
+          }
         </div>
-      }
-
-      {/* register form */}
-      {
-          showRegisterForm && <Register show={showRegister} handleClose={closeRegisterModal}/>
-        }
-    </div>
   )
 }
 
-export default Login;
+const ModalForm = styled.form`
+  position: fixed;
+	background: white;
+  border-top: 10px solid  #817dea;
+	width: 50%;
+	height: auto;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	flex-direction: column;
+	padding: 30px;
+  z-index: -1;
+`
+
+const CloseIcon = styled.i`
+  position: absolute;
+	cursor: pointer;
+	font-size: 2rem;
+	top: 0%;
+	right: 0%;
+  z-index: 1;
+`
+
+const Heading = styled.h1`
+  display: flex;
+  font-weight: 700;
+  line-height: 1.5;
+`
+
+const ModalDescription = styled.p`
+  line-height: 1.5;
+  font-weight: 500;
+  margin-top:30px;
+`
+
+const ModalFormInput = styled.input`
+  padding: 20px;
+  outline: none;
+  border: 1px solid #817dea;
+  border-radius: 10px;
+  margin-top: 20px;
+  width: 100%;
+`
+
+export default AuthModal;
