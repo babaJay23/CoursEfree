@@ -5,7 +5,6 @@ import { AiFillCloseCircle } from 'react-icons/ai';
 import { useForm } from 'react-hook-form';
 import Swal from "sweetalert2";
 import './Modal.css';
-import AuthModal from './AuthModal';
 
 const RegisterModal = ({ handleClose, show }) =>{
 
@@ -42,6 +41,24 @@ const RegisterModal = ({ handleClose, show }) =>{
     setUsername("");
     setPassword("");
   }
+
+  const handleLoginForm = () => {
+    setEmail("");
+    setPassword("");
+
+    if(email !== '' && password !== ''){
+
+      Swal.fire({
+        title: 'Wow!',
+        timer: 2000,
+        text: 'We will get back to you soon!',
+      })
+
+    }
+    setEmail("");
+    setPassword("");
+  }
+
 
 
   const showHideClassName = show ? 'modal display-block' : 'modal display-none';
@@ -112,7 +129,55 @@ const RegisterModal = ({ handleClose, show }) =>{
           </ModalForm>
           }
           {
-            showLoginForm && <AuthModal />
+            showLoginForm && 
+            <ModalForm onSubmit={handleSubmit(handleLoginForm)}>
+          <Heading>Welcome to CoursEfree to learn some of the valuable skills</Heading>
+          <ModalDescription>If you already have an account, please sign in below.</ModalDescription>
+            <div className="form-group">
+              <label htmlFor="email">Email</label>
+              <ModalFormInput type="text"
+                placeholder='enter your email'
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+                {...register('email', {
+                  required: true,
+                  pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                })}
+              />{errors.email && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '10px' }}>Please enter Email*</p>}
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="password">Password</label>
+              <ModalFormInput type="password"
+                placeholder='enter your password'
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+                {...register('password', {
+                  required: true,
+                })}
+              />{errors.password && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '10px' }}>Please enter Password*</p>}
+            </div>
+
+            <div className="form-action">
+              <div className="check">
+                <input type="checkbox" name="remember-me" id="remember" />
+                <p style={{ marginLeft: '10px' }}>Remember Me.</p>
+              </div>
+              <div className="forgot">
+                <Link to="/reset">Forgot Password?</Link>
+              </div>
+            </div>
+
+            <div className="form-btn">
+              <div className="login-btn">
+                <button type='submit' onClick={switchForms}>Login</button>
+              </div>
+              <div className="sign-up">
+                <button class='register-link'>Sign Up</button>
+              </div>
+            </div>
+            <CloseIcon onClick={handleClose}><AiFillCloseCircle /></CloseIcon>
+          </ModalForm>
           }
         </div>
   )

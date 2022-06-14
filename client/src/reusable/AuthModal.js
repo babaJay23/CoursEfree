@@ -5,7 +5,6 @@ import { AiFillCloseCircle } from 'react-icons/ai';
 import { useForm } from 'react-hook-form';
 import Swal from "sweetalert2";
 import './Modal.css';
-import RegisterModal from './RegisterModal';
 
 const AuthModal = ({ handleClose, show }) =>{
 
@@ -13,6 +12,7 @@ const AuthModal = ({ handleClose, show }) =>{
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
   const [showRegisterForm, setShowRegisterForm] = useState(false);
   const [showLoginForm, setShowLoginForm] = useState(true);
 
@@ -39,12 +39,36 @@ const AuthModal = ({ handleClose, show }) =>{
     setShowRegisterForm(!false);
   }
 
+  const showLogin = () =>{
+    setShowLoginForm(true);
+    setShowRegisterForm(false);
+  }
+
+  const handleRegisterForm = () => {
+    setEmail("");
+    setUsername("");
+    setPassword("");
+
+    if(email !== '' && password !== ''){
+
+      Swal.fire({
+        title: 'Wow!',
+        timer: 2000,
+        text: 'We will get back to you soon!',
+      })
+
+    }
+    setEmail("");
+    setUsername("");
+    setPassword("");
+  }
+
 
   const showHideClassName = show ? 'modal display-block' : 'modal display-none';
   return (
     <div className={showHideClassName}>
           {
-            showLoginForm && 
+            showLoginForm &&
           <ModalForm onSubmit={handleSubmit(handleLoginForm)}>
           <Heading>Welcome to CoursEfree to learn some of the valuable skills</Heading>
           <ModalDescription>If you already have an account, please sign in below.</ModalDescription>
@@ -94,9 +118,71 @@ const AuthModal = ({ handleClose, show }) =>{
             <CloseIcon onClick={handleClose}><AiFillCloseCircle /></CloseIcon>
           </ModalForm>
           }
-          
+
+          {/* register */}
           {
-            showRegisterForm && <RegisterModal />
+            showRegisterForm && 
+            <ModalForm onSubmit={handleSubmit(handleRegisterForm)}>
+            <Heading>Welcome to CoursEfree to learn some of the valuable skills</Heading>
+            <ModalDescription>If you already have an account, please sign in below.</ModalDescription>
+              <div className="form-group">
+                <label htmlFor="email">Email</label>
+                <ModalFormInput type="text"
+                  placeholder='enter your email'
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
+                  {...register('email', {
+                    required: true,
+                    pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                  })}
+                />{errors.email && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '10px' }}>Please enter Email*</p>}
+              </div>
+  
+              <div className="form-group">
+                <label htmlFor="username">Username</label>
+                <ModalFormInput type="username"
+                  placeholder='enter your username'
+                  value={username}
+                  onChange={(event) => setUsername(event.target.value)}
+                  {...register('username', {
+                    required: true,
+                  })}
+                />{errors.username && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '10px' }}>Please enter Password*</p>}
+              </div>
+  
+              <div className="form-group">
+                <label htmlFor="password">Password</label>
+                <ModalFormInput type="password"
+                  placeholder='enter your password'
+                  value={password}
+                  onChange={(event) => setPassword(event.target.value)}
+                  {...register('password', {
+                    required: true,
+                  })}
+                />{errors.password && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '10px' }}>Please enter Username*</p>}
+              </div>
+  
+  
+              <div className="form-action">
+                <div className="check">
+                  <input type="checkbox" name="remember-me" id="remember" />
+                  <p style={{ marginLeft: '10px' }}>Remember Me.</p>
+                </div>
+                <div className="forgot">
+                  <Link to="/reset">Forgot Password?</Link>
+                </div>
+              </div>
+  
+              <div className="form-btn">
+                <div className="login-btn">
+                  <button type='submit'>Sign Up</button>
+                </div>
+                <div className="sign-up">
+                  <button class='register-link' onClick={ showLogin}>Login</button>
+                </div>
+              </div>
+              <CloseIcon onClick={handleClose}><AiFillCloseCircle /></CloseIcon>
+            </ModalForm>
           }
         </div>
   )
