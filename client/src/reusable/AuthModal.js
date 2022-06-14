@@ -49,7 +49,7 @@ const AuthModal = ({ handleClose, show }) =>{
     setUsername("");
     setPassword("");
 
-    if(email !== '' && password !== ''){
+    if(email !== '' && password !== '' && username !== ''){
 
       Swal.fire({
         title: 'Wow!',
@@ -72,7 +72,7 @@ const AuthModal = ({ handleClose, show }) =>{
           <ModalForm onSubmit={handleSubmit(handleLoginForm)}>
           <Heading>Welcome to CoursEfree to learn some of the valuable skills</Heading>
           <ModalDescription>If you already have an account, please sign in below.</ModalDescription>
-            <div className="form-group">
+            <div className="form-group" style={{ marginTop: '20px' }}>
               <label htmlFor="email">Email</label>
               <ModalFormInput type="text"
                 placeholder='enter your email'
@@ -85,7 +85,7 @@ const AuthModal = ({ handleClose, show }) =>{
               />{errors.email && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '10px' }}>Please enter Email*</p>}
             </div>
 
-            <div className="form-group">
+            <div className="form-group" style={{ marginTop: '20px' }}>
               <label htmlFor="password">Password</label>
               <ModalFormInput type="password"
                 placeholder='enter your password'
@@ -125,7 +125,7 @@ const AuthModal = ({ handleClose, show }) =>{
             <ModalForm onSubmit={handleSubmit(handleRegisterForm)}>
             <Heading>Welcome to CoursEfree to learn some of the valuable skills</Heading>
             <ModalDescription>If you already have an account, please sign in below.</ModalDescription>
-              <div className="form-group">
+              <div className="form-group" style={{ marginTop: '20px' }}>
                 <label htmlFor="email">Email</label>
                 <ModalFormInput type="text"
                   placeholder='enter your email'
@@ -138,7 +138,7 @@ const AuthModal = ({ handleClose, show }) =>{
                 />{errors.email && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '10px' }}>Please enter Email*</p>}
               </div>
   
-              <div className="form-group">
+              <div className="form-group" style={{ marginTop: '20px' }}>
                 <label htmlFor="username">Username</label>
                 <ModalFormInput type="username"
                   placeholder='enter your username'
@@ -150,7 +150,7 @@ const AuthModal = ({ handleClose, show }) =>{
                 />{errors.username && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '10px' }}>Please enter Password*</p>}
               </div>
   
-              <div className="form-group">
+              <div className="form-group" style={{ marginTop: '20px' }}>
                 <label htmlFor="password">Password</label>
                 <ModalFormInput type="password"
                   placeholder='enter your password'
@@ -229,8 +229,8 @@ const ModalFormInput = styled.input`
   outline: none;
   border: 1px solid #817dea;
   border-radius: 10px;
-  margin-top: 20px;
   width: 100%;
+  margin-top: 10px;
 `
 
 export default AuthModal;
