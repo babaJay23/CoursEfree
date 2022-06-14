@@ -5,23 +5,25 @@ import { AiFillCloseCircle } from 'react-icons/ai';
 import { useForm } from 'react-hook-form';
 import Swal from "sweetalert2";
 import './Modal.css';
-import RegisterModal from './RegisterModal';
 
 const AuthModal = ({ handleClose, show }) =>{
 
   const { register, handleSubmit, formState: { errors } } = useForm();
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [loginEmail, setLoginEmail] = useState("");
+  const [loginPassword, setLoginPassword] = useState("");
+  const [registerEmail, setRegisterEmail] = useState("");
+  const [registerPassword, setRegisterPassword] = useState("");
+  const [username, setUsername] = useState("");
   const [showRegisterForm, setShowRegisterForm] = useState(false);
   const [showLoginForm, setShowLoginForm] = useState(true);
 
 
   const handleLoginForm = () => {
-    setEmail("");
-    setPassword("");
+    setLoginEmail("");
+    setLoginPassword("");
 
-    if(email !== '' && password !== ''){
+    if(loginEmail !== '' && loginPassword !== ''){
 
       Swal.fire({
         title: 'Wow!',
@@ -30,8 +32,8 @@ const AuthModal = ({ handleClose, show }) =>{
       })
 
     }
-    setEmail("");
-    setPassword("");
+    setLoginEmail("");
+    setLoginPassword("");
   }
 
   const showRegister = () =>{
@@ -39,21 +41,45 @@ const AuthModal = ({ handleClose, show }) =>{
     setShowRegisterForm(!false);
   }
 
+  const showLogin = () =>{
+    setShowLoginForm(true);
+    setShowRegisterForm(false);
+  }
+
+  const handleRegisterForm = () => {
+    setRegisterEmail("");
+    setUsername("");
+    setRegisterPassword("");
+
+    if(registerEmail !== '' && registerPassword !== '' && username !== ''){
+
+      Swal.fire({
+        title: 'Wow!',
+        timer: 2000,
+        text: 'We will get back to you soon!',
+      })
+
+    }
+    setRegisterEmail("");
+    setUsername("");
+    setRegisterPassword("");
+  }
+
 
   const showHideClassName = show ? 'modal display-block' : 'modal display-none';
   return (
     <div className={showHideClassName}>
           {
-            showLoginForm && 
+            showLoginForm &&
           <ModalForm onSubmit={handleSubmit(handleLoginForm)}>
           <Heading>Welcome to CoursEfree to learn some of the valuable skills</Heading>
           <ModalDescription>If you already have an account, please sign in below.</ModalDescription>
-            <div className="form-group">
+            <div className="form-group" style={{ marginTop: '20px' }}>
               <label htmlFor="email">Email</label>
               <ModalFormInput type="text"
                 placeholder='enter your email'
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
+                value={loginEmail}
+                onChange={(event) => setLoginEmail(event.target.value)}
                 {...register('email', {
                   required: true,
                   pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -61,16 +87,17 @@ const AuthModal = ({ handleClose, show }) =>{
               />{errors.email && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '10px' }}>Please enter Email*</p>}
             </div>
 
-            <div className="form-group">
+            <div className="form-group" style={{ marginTop: '20px' }}>
               <label htmlFor="password">Password</label>
-              <ModalFormInput type="password"
+                <ModalFormInput type="password"
                 placeholder='enter your password'
-                value={password}
-                onChange={(event) => setPassword(event.target.value)}
+                value={loginPassword}
+                onChange={(event) => setLoginPassword(event.target.value)}
                 {...register('password', {
                   required: true,
                 })}
-              />{errors.password && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '10px' }}>Please enter Password*</p>}
+              />
+              {errors.password && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '10px' }}>Please enter Password*</p>}
             </div>
 
             <div className="form-action">
@@ -94,9 +121,71 @@ const AuthModal = ({ handleClose, show }) =>{
             <CloseIcon onClick={handleClose}><AiFillCloseCircle /></CloseIcon>
           </ModalForm>
           }
-          
+
+          {/* register */}
           {
-            showRegisterForm && <RegisterModal />
+            showRegisterForm && 
+            <ModalForm onSubmit={handleSubmit(handleRegisterForm)}>
+            <Heading>Welcome to CoursEfree to learn some of the valuable skills</Heading>
+            <ModalDescription>If you already have an account, please sign in below.</ModalDescription>
+              <div className="form-group" style={{ marginTop: '20px' }}>
+                <label htmlFor="email">Email</label>
+                <ModalFormInput type="text"
+                  placeholder='enter your email'
+                  value={registerEmail}
+                  onChange={(event) => setRegisterEmail(event.target.value)}
+                  {...register('registerEmail', {
+                    required: true,
+                    pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                  })}
+                />{errors.registerEmail && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '10px' }}>Please enter Email*</p>}
+              </div>
+  
+              <div className="form-group" style={{ marginTop: '20px' }}>
+                <label htmlFor="username">Username</label>
+                <ModalFormInput type="username"
+                  placeholder='enter your username'
+                  value={username}
+                  onChange={(event) => setUsername(event.target.value)}
+                  {...register('username', {
+                    required: true,
+                  })}
+                />{errors.username && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '10px' }}>Please enter Username*</p>}
+              </div>
+  
+              <div className="form-group" style={{ marginTop: '20px' }}>
+                <label htmlFor="password">Password</label>
+                <ModalFormInput type="password"
+                  placeholder='enter your password'
+                  value={registerPassword}
+                  onChange={(event) => setRegisterPassword(event.target.value)}
+                  {...register('registerPassword', {
+                    required: true,
+                  })}
+                />{errors.registerPassword && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '10px' }}>Please enter Password*</p>}
+              </div>
+  
+  
+              <div className="form-action">
+                <div className="check">
+                  <input type="checkbox" name="remember-me" id="remember" />
+                  <p style={{ marginLeft: '10px' }}>Remember Me.</p>
+                </div>
+                <div className="forgot">
+                  <Link to="/reset">Forgot Password?</Link>
+                </div>
+              </div>
+  
+              <div className="form-btn">
+                <div className="login-btn">
+                  <button type='submit'>Sign Up</button>
+                </div>
+                <div className="sign-up">
+                  <button class='register-link' onClick={ showLogin}>Login</button>
+                </div>
+              </div>
+              <CloseIcon onClick={handleClose}><AiFillCloseCircle /></CloseIcon>
+            </ModalForm>
           }
         </div>
   )
@@ -143,8 +232,8 @@ const ModalFormInput = styled.input`
   outline: none;
   border: 1px solid #817dea;
   border-radius: 10px;
-  margin-top: 20px;
   width: 100%;
+  margin-top: 10px;
 `
 
 export default AuthModal;
