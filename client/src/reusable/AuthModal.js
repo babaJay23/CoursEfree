@@ -10,18 +10,20 @@ const AuthModal = ({ handleClose, show }) =>{
 
   const { register, handleSubmit, formState: { errors } } = useForm();
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [loginEmail, setLoginEmail] = useState("");
+  const [loginPassword, setLoginPassword] = useState("");
+  const [registerEmail, setRegisterEmail] = useState("");
+  const [registerPassword, setRegisterPassword] = useState("");
   const [username, setUsername] = useState("");
   const [showRegisterForm, setShowRegisterForm] = useState(false);
   const [showLoginForm, setShowLoginForm] = useState(true);
 
 
   const handleLoginForm = () => {
-    setEmail("");
-    setPassword("");
+    setLoginEmail("");
+    setLoginPassword("");
 
-    if(email !== '' && password !== ''){
+    if(loginEmail !== '' && loginPassword !== ''){
 
       Swal.fire({
         title: 'Wow!',
@@ -30,8 +32,8 @@ const AuthModal = ({ handleClose, show }) =>{
       })
 
     }
-    setEmail("");
-    setPassword("");
+    setLoginEmail("");
+    setLoginPassword("");
   }
 
   const showRegister = () =>{
@@ -45,11 +47,11 @@ const AuthModal = ({ handleClose, show }) =>{
   }
 
   const handleRegisterForm = () => {
-    setEmail("");
+    setRegisterEmail("");
     setUsername("");
-    setPassword("");
+    setRegisterPassword("");
 
-    if(email !== '' && password !== '' && username !== ''){
+    if(registerEmail !== '' && registerPassword !== '' && username !== ''){
 
       Swal.fire({
         title: 'Wow!',
@@ -58,9 +60,9 @@ const AuthModal = ({ handleClose, show }) =>{
       })
 
     }
-    setEmail("");
+    setRegisterEmail("");
     setUsername("");
-    setPassword("");
+    setRegisterPassword("");
   }
 
 
@@ -76,8 +78,8 @@ const AuthModal = ({ handleClose, show }) =>{
               <label htmlFor="email">Email</label>
               <ModalFormInput type="text"
                 placeholder='enter your email'
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
+                value={loginEmail}
+                onChange={(event) => setLoginEmail(event.target.value)}
                 {...register('email', {
                   required: true,
                   pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -87,14 +89,15 @@ const AuthModal = ({ handleClose, show }) =>{
 
             <div className="form-group" style={{ marginTop: '20px' }}>
               <label htmlFor="password">Password</label>
-              <ModalFormInput type="password"
+                <ModalFormInput type="password"
                 placeholder='enter your password'
-                value={password}
-                onChange={(event) => setPassword(event.target.value)}
+                value={loginPassword}
+                onChange={(event) => setLoginPassword(event.target.value)}
                 {...register('password', {
                   required: true,
                 })}
-              />{errors.password && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '10px' }}>Please enter Password*</p>}
+              />
+              {errors.password && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '10px' }}>Please enter Password*</p>}
             </div>
 
             <div className="form-action">
@@ -129,13 +132,13 @@ const AuthModal = ({ handleClose, show }) =>{
                 <label htmlFor="email">Email</label>
                 <ModalFormInput type="text"
                   placeholder='enter your email'
-                  value={email}
-                  onChange={(event) => setEmail(event.target.value)}
-                  {...register('email', {
+                  value={registerEmail}
+                  onChange={(event) => setRegisterEmail(event.target.value)}
+                  {...register('registerEmail', {
                     required: true,
                     pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
                   })}
-                />{errors.email && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '10px' }}>Please enter Email*</p>}
+                />{errors.registerEmail && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '10px' }}>Please enter Email*</p>}
               </div>
   
               <div className="form-group" style={{ marginTop: '20px' }}>
@@ -147,19 +150,19 @@ const AuthModal = ({ handleClose, show }) =>{
                   {...register('username', {
                     required: true,
                   })}
-                />{errors.username && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '10px' }}>Please enter Password*</p>}
+                />{errors.username && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '10px' }}>Please enter Username*</p>}
               </div>
   
               <div className="form-group" style={{ marginTop: '20px' }}>
                 <label htmlFor="password">Password</label>
                 <ModalFormInput type="password"
                   placeholder='enter your password'
-                  value={password}
-                  onChange={(event) => setPassword(event.target.value)}
-                  {...register('password', {
+                  value={registerPassword}
+                  onChange={(event) => setRegisterPassword(event.target.value)}
+                  {...register('registerPassword', {
                     required: true,
                   })}
-                />{errors.password && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '10px' }}>Please enter Username*</p>}
+                />{errors.registerPassword && <p style={{ color: 'red', fontSize: '0.8rem', marginTop: '10px' }}>Please enter Password*</p>}
               </div>
   
   
