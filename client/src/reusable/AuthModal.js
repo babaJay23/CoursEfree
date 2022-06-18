@@ -19,6 +19,15 @@ const AuthModal = ({ handleClose, show }) =>{
   const [showLoginForm, setShowLoginForm] = useState(true);
 
 
+  const handleInputChange = (event) =>{
+    setLoginEmail(event.target.value)
+    setLoginPassword(event.target.value)
+    setRegisterEmail(event.target.value)
+    setRegisterPassword(event.target.value)
+    setUsername(event.target.value)
+  }
+
+
   const handleLoginForm = () => {
     setLoginEmail("");
     setLoginPassword("");
@@ -79,7 +88,7 @@ const AuthModal = ({ handleClose, show }) =>{
               <ModalFormInput type="text"
                 placeholder='enter your email'
                 value={loginEmail}
-                onChange={(event) => setLoginEmail(event.target.value)}
+                onChange={handleInputChange}
                 {...register('email', {
                   required: true,
                   pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -92,7 +101,7 @@ const AuthModal = ({ handleClose, show }) =>{
                 <ModalFormInput type="password"
                 placeholder='enter your password'
                 value={loginPassword}
-                onChange={(event) => setLoginPassword(event.target.value)}
+                onChange={handleInputChange}
                 {...register('password', {
                   required: true,
                 })}
@@ -133,7 +142,7 @@ const AuthModal = ({ handleClose, show }) =>{
                 <ModalFormInput type="text"
                   placeholder='enter your email'
                   value={registerEmail}
-                  onChange={(event) => setRegisterEmail(event.target.value)}
+                  onChange={handleInputChange}
                   {...register('registerEmail', {
                     required: true,
                     pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -146,7 +155,7 @@ const AuthModal = ({ handleClose, show }) =>{
                 <ModalFormInput type="username"
                   placeholder='enter your username'
                   value={username}
-                  onChange={(event) => setUsername(event.target.value)}
+                  onChange={handleInputChange}
                   {...register('username', {
                     required: true,
                   })}
@@ -158,7 +167,7 @@ const AuthModal = ({ handleClose, show }) =>{
                 <ModalFormInput type="password"
                   placeholder='enter your password'
                   value={registerPassword}
-                  onChange={(event) => setRegisterPassword(event.target.value)}
+                  onChange={handleInputChange}
                   {...register('registerPassword', {
                     required: true,
                   })}
