@@ -58,9 +58,9 @@ const Home = () => {
 const HomeContainer = styled.div`
   display: flex;
   width: 100%;
-  padding-top: 70px;
+  padding-top: 30px;
   height: 80vh;
-  margin-top: 50px;
+  margin-top: 30px;
   justify-content: space-between;
 `
 const SectionImage = styled.div`
