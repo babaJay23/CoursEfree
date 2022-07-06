@@ -6,12 +6,12 @@ import Trial from './components/Trial/Trial';
 import Tutorial from './components/Tutorials/Tutorial';
 import Free from './components/Free/Free';
 import Footer from './components/Footer/Footer';
-import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import { BrowserRouter as Router} from 'react-router-dom';
 const  App = () => {
   return (
     <Router>
       <div className="App">
-      <Navbar about={'About'} trial={'Trial'} tutorials={'Tutorials'} free={'Win a Course'} testimonials={'Testimonials'}/>
+      <Navbar about={'About'} resources={"Resources"} trial={'Trial'} tutorials={'Tutorials'} free={'Win a Course'} testimonials={'Testimonials'}/>
       <Home />
       <About />
       <Trial />

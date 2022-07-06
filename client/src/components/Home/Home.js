@@ -35,7 +35,7 @@ const Home = () => {
         <Image src="/img/trial.png" alt="home" />
       </SectionImage>
       <SectionDescription className="section-description">
-        <Heading>Start your free trial</Heading>
+        <Heading>Start learning or free!</Heading>
         <Description>Subscribe and start learning today! Your free trial includes 14-day unlimited watches.</Description>
         <Form onSubmit={handleSubmit(handleFormSubmit)}>
           <Input type="email"
@@ -73,7 +73,8 @@ const Image = styled.img`
   align-items: center;
   max-width: 100%;
   position: absolute;
-  left: -140px;
+  left: -200px;
+  top: 120px;
 `
 
 const SectionDescription = styled.div`

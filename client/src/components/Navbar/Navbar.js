@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {Link as ScrollLink } from 'react-scroll';
 import AuthModal from '../../reusable/AuthModal';
 
-const Navbar = ({about, trial, tutorials, free}) => {
+const Navbar = ({about, trial, tutorials, free, resources}) => {
 
   const [show, setShow] = useState(false)
 
@@ -26,6 +26,7 @@ const Navbar = ({about, trial, tutorials, free}) => {
         <NavBar>
           <UlContainer>
             <ListItem><ScrollLink to="about">{about}</ScrollLink></ListItem>
+            <ListItem><ScrollLink to="resources">{resources}</ScrollLink></ListItem>
             <ListItem><ScrollLink to="trial">{trial}</ScrollLink></ListItem>
             <ListItem><ScrollLink to="tutorials">{tutorials}</ScrollLink></ListItem>
             <ListItem><ScrollLink to="free">{free}</ScrollLink></ListItem>
