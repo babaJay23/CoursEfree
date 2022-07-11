@@ -11,7 +11,7 @@ const  App = () => {
   return (
     <Router>
       <div className="App">
-      <Navbar about={'About'} resources={"Resources"} trial={'Trial'} tutorials={'Tutorials'} free={'Win a Course'} testimonials={'Testimonials'}/>
+      <Navbar about={'About'} resources={"Resources"} trial={'Trial'} tutorials={'Tutorials'} free={'Win a Course'} testimonials={'Testimonials'} courses={"Courses"} />
       <Home />
       <About />
       <Trial />
