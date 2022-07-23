@@ -9,7 +9,7 @@ const Courses = () =>{
     setShowContent(true)
   }
   return (
-    <CoursesContainer>
+    <CoursesContainer id="courses">
       <Heading>Free Courses</Heading>
       <CourseCategoryWrapper>
         <Category>
@@ -50,6 +50,7 @@ const CourseCategoryWrapper = styled.div`
   grid-template-columns: repeat(2, 2fr);
   grid-gap: 20px;
   width: 100%;
+  margin-top: 20px;
 `
 
 const Category = styled.div`
@@ -57,6 +58,13 @@ const Category = styled.div`
   flex-direction: column;
   background-color: #0bce97;
   color: #fff;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
 `
 
 export default Courses
