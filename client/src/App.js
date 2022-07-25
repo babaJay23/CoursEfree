@@ -7,6 +7,7 @@ import Tutorial from './components/Tutorials/Tutorial';
 import Free from './components/Free/Free';
 import Footer from './components/Footer/Footer';
 import { BrowserRouter as Router} from 'react-router-dom';
+import Courses from './components/Courses/Courses';
 const  App = () => {
   return (
     <Router>
@@ -16,6 +17,7 @@ const  App = () => {
       <About />
       <Trial />
       <Tutorial text={'Try Now'} />
+      <Courses />
       <Free />
       <Footer />
     </div>
