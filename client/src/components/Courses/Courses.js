@@ -25,6 +25,9 @@ const Courses = () =>{
         <h3>Web Design</h3>
         </Category>
         <Category>
+        <h3>UI/UX Design</h3>
+        </Category>
+        <Category>
         <h3>Ethical Hacking</h3>
         </Category>
       </CourseCategoryWrapper>
