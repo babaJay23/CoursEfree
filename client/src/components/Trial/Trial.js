@@ -44,6 +44,12 @@ const TrialContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding: 150px 0px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 20px;
+    margin-top: 70px;
+  }
 `
 
 const SectionHeader = styled.div`
@@ -52,12 +58,27 @@ const SectionHeader = styled.div`
   width: 100%;
   padding-top: 70px;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-top: 20px;
+    justify-content: center;
+  }
 `
 
 const H3 = styled.h3`
   display: flex;
   font-size: 3rem;
   font-weight: 700;
+
+  @media (max-width: 768px) {
+    width: 50%;
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
 `
 
 const H1 = styled.h1`
@@ -67,6 +88,15 @@ const H1 = styled.h1`
   font-weight: 900;
   color: #817dea;
   width: 100%;
+
+  @media (max-width: 768px) {
+    width: 90%;
+    display: flex;
+    padding: 10px;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #817dea;
+  }
 `
 
 const SectionImages = styled.div`
@@ -75,6 +105,15 @@ const SectionImages = styled.div`
   align-items: center;
   width: 100%;
   margin-top: 70px;
+
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 30px;
+  }
 `
 
 const TrialDescription = styled.div`
@@ -84,6 +123,11 @@ const TrialDescription = styled.div`
   align-items: center;
   width: 100%;
   margin: auto;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin: auto;
+  }
 `
 
 export default Trial;
