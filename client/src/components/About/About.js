@@ -33,6 +33,13 @@ const AboutSection = styled.div`
    margin-top: 120px;
    padding-bottom: 50px;
 
+
+   @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+  }
 `
 
 
@@ -42,6 +49,14 @@ const AboutText = styled.div`
   width: 100%;
   margin-top: 100px;
   margin-left: 70px;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 50px;
+    margin-left: 20px;
+  }
 `
 
 const AboutHeading = styled.h1`
@@ -49,6 +64,14 @@ const AboutHeading = styled.h1`
   font-weight: 900;
   font-size: 2.5rem;
   width: 90%;
+
+  @media (max-width: 768px) {
+    margin-top: 30px
+    font-weight: 900;
+    font-size: 2rem;
+    width: 100%;
+  }
+  
 `
 
 const AboutDescription = styled.p`
@@ -56,6 +79,10 @@ const AboutDescription = styled.p`
   width: 90%;
   line-height: 1.5;
   font-weight: 500;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `
 
 const ActionContainer = styled.div`
@@ -63,6 +90,12 @@ const ActionContainer = styled.div`
   display: flex;
   align-items: center;
   width: 70%;
+
+  @media (max-width: 768px) {
+    font-weight: 900;
+    font-size: 2rem;
+    width: 100%;
+  }
 `
 
 const CategoryListItem = styled.button`
@@ -81,6 +114,10 @@ const CategoryListItem = styled.button`
     background-color: transparent;
     color: #000;
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `
 
 const TutorialListItem = styled.li`
@@ -91,7 +128,6 @@ const TutorialListItem = styled.li`
   justify-content: center;
   padding: 15px;
   cursor: pointer;
-  padding: 20px;
   width: 50%;
   cursor: pointer;
   border: 2px solid #000;
@@ -104,10 +140,21 @@ const TutorialListItem = styled.li`
     background-color: #0bce97;
     color: #fff;
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `
 
 const SectionImage = styled.div`
   width: 100%;
   padding-left: 20px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `
 export default About;
