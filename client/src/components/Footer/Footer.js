@@ -95,6 +95,16 @@ const FooterContainer = styled.div`
   justify-content: space-around;
   flex-direction: column;
   color: #fff;
+
+  @media (max-width: 768px) {
+    display: flex;
+    margin-top: 30px;
+    padding: 20px;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+  }
 `
 
 const TopContainer = styled.div`
@@ -103,12 +113,30 @@ const TopContainer = styled.div`
   width: 100%;
   justify-content: space-around;
   color: #fff;
+
+  @media (max-width: 768px) {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    flex-direction: column;
+    color: #fff;
+  }
 `
 const FooterIcons = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 20px;
-  width:10%;
+  width:50%;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    width:100%;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+  }
 `
 
 const FooterImage = styled.img`
@@ -120,6 +148,14 @@ const SocialIcons = styled.div`
   margin-top: 20px;
   width: 40%;
   justify-content: space-around;
+
+  @media (max-width: 768px) {
+    display: flex;
+    margin-top: 10px;
+    width: 100%;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+  }
 `
 const Menu = styled.div`
   margin-top: 30px;
@@ -133,6 +169,14 @@ const ListItems = styled.li`
     text-decoration: none;
     color: #fff;
   }
+
+  @media (max-width: 768px) {
+    display: flex;
+    margin-top: 10px;
+    width: 100%;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+  }
 `
 
 const FooterForm = styled.div`
@@ -140,12 +184,30 @@ const FooterForm = styled.div`
   flex-direction: column;
   margin-top: 30px;
   width: 40%;
+
+  @media (max-width: 768px) {
+    display: flex;
+    margin-top: 30px;
+    width: 100%;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    flex-direction: column;
+  }
 `
 
 const SubscribeForm = styled.form`
   display: flex;
   flex-direction: column;
   margin-top: 20px;
+
+  @media (max-width: 768px) {
+    display: flex;
+    margin-top: 10px;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center !important;
+    align-items: flex-start !important;
+  }
 `
 
 const FormInput = styled.input`
@@ -155,6 +217,13 @@ const FormInput = styled.input`
   outline: none;
   border: none;
   border-radius: 10px;
+
+  @media (max-width: 768px) {
+    display: flex;
+    width: 100%;
+    justify-content: center !important;
+    align-items: flex-start !important;
+  }
 `
 
 const FormButton = styled.button`
@@ -173,6 +242,14 @@ const FormButton = styled.button`
   &:hover{
     background-color: #817dea;
   }
+
+  @media (max-width: 768px) {
+    display: flex;
+    margin-top: 30px;
+    width: 50%;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+  }
 `
 
 const BottomSection = styled.div`
@@ -184,12 +261,28 @@ const BottomSection = styled.div`
   flex-direction: column;
   color: #fff;
   margin-top: 50px;
+
+  @media (max-width: 768px) {
+    display: flex;
+    margin-top: 20px;
+    padding: 0px 0px;
+    width: 100%;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+  }
 `
 
 const HR = styled.hr`
   border: none;
   height: 0.5px;
   background-color: #817dea;
+
+  @media (max-width: 768px) {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+  }
 `
 
 
