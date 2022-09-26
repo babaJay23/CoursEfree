@@ -36,6 +36,15 @@ const FreeContext = styled.div`
   margin: auto;
   justify-content: center;
   display: flex;
+
+  @media (max-width: 768px) {
+    padding: 50px 20px;
+    width: 100%;
+    margin: auto;
+    justify-content: flex-start;
+    flex-direction: column;
+    display: flex;
+  }
 `
 
 const FreeImage = styled.div`
@@ -43,6 +52,15 @@ const FreeImage = styled.div`
   width: 50%;
   align-items: center;
   justify-content: flex-end;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: 20px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `
 
 const FreeText = styled.div`
@@ -51,12 +69,29 @@ const FreeText = styled.div`
   width: 50%;
   padding: 0px 30px;
   flex-direction: column;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: 20px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0px;
+  }
 `
 
 const FreeHeader = styled.h1`
   font-size: 3rem;
   font-weight: 700;
   width: 100%;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    font-weight: 700;
+    width: 100% !important;
+    display: flex;
+  }
 `
 
 const FreeDescription = styled.p`
@@ -65,6 +100,14 @@ const FreeDescription = styled.p`
   font-weight: 500;
   line-height: 1.5;
   width: 70%;
+
+  @media (max-width: 768px) {
+    display: flex;
+    font-size: 1rem !important;
+    font-weight: 400;
+    line-height: 1.2;
+    width: 100%;
+  }
 `
 
 const FreeButton = styled.button`
@@ -84,6 +127,17 @@ const FreeButton = styled.button`
 
   &:hover{
     background-color: #0bce97;
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+    margin-top: 30px;
+    padding: 20px;
+    width: 100%;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    font-weight: 700;
+    font-size: 1rem;
   }
 `
 export default Free;
