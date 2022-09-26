@@ -55,7 +55,7 @@ const AboutText = styled.div`
     flex-direction: column;
     width: 100%;
     margin-top: 50px;
-    margin-left: 20px;
+    margin-left: 0px;
   }
 `
 
@@ -69,7 +69,7 @@ const AboutHeading = styled.h1`
     margin-top: 30px
     font-weight: 900;
     font-size: 2rem;
-    width: 100%;
+    width: 80%;
   }
   
 `
@@ -95,6 +95,9 @@ const ActionContainer = styled.div`
     font-weight: 900;
     font-size: 2rem;
     width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
 `
 
@@ -116,7 +119,9 @@ const CategoryListItem = styled.button`
   }
 
   @media (max-width: 768px) {
-    width: 100%;
+    width: 50%;
+    margin-left: 0px !important;
+    margin-top: 20px;
   }
 `
 
@@ -142,7 +147,7 @@ const TutorialListItem = styled.li`
   }
 
   @media (max-width: 768px) {
-    width: 100%;
+    width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -158,6 +163,8 @@ const SectionImage = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-left: 0 !important;
+    margin-top: 30px;
   }
 `
 export default About;

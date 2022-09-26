@@ -89,11 +89,30 @@ const TutorialSection = styled.div`
   padding: 100px 0px;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+  }
 `
 
 const TutorialHeading = styled.h1`
   font-size: 3rem;
   display: flex;
+
+  @media (max-width: 768px) {
+    width: 100% !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+  }
 `
 
 const HeaderDescription = styled.p`
@@ -104,6 +123,15 @@ const HeaderDescription = styled.p`
   font-weight: 500;
   margin-top: 20px;
   line-height: 1.5;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  text-align: center;
+  font-size: 1rem !important;
+  font-weight: 400;
+  margin-top: 20px;
+  line-height: 1.2;
+  }
 `
 
 const DescriptionContainer = styled.div`
@@ -113,6 +141,16 @@ const DescriptionContainer = styled.div`
   grid-gap: 20px;
   padding: 50px;
   width: 80%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: 20px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+  }
 `
 
 const SectionContents = styled.div`
@@ -123,6 +161,15 @@ const SectionContents = styled.div`
   margin-top: 30px;
   border-radius: 10px;
   overflow: auto;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin: 20px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `
 
 const TutorialButton = styled.button`
@@ -146,6 +193,15 @@ const TutorialButton = styled.button`
     background-color: transparent;
     color: #000;
     border: 2px solid #000;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin: 20px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 `
 

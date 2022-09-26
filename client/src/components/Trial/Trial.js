@@ -18,17 +18,17 @@ const Trial = () => {
       <SectionImages className="section-images">
         <TrialDescription className="description">
           <img src="/img/trial1.png" alt="trial1" />
-          <H3 style={{ marginTop: '20px' }}><CountUp end={250} /></H3>
+          <h3 style={{ marginTop: '20px' }}><CountUp end={250} /></h3>
           <p style={{  marginTop: '10px', fontWeight: 500 }}>Tutorials+</p>
         </TrialDescription>
         <TrialDescription className="description">
           <img src="/img/trial2.png" alt="trial2" />
-          <H3 style={{ marginTop: '20px' }}><CountUp end={14} /> -day</H3>
+          <h3 style={{ marginTop: '20px' }}><CountUp end={14} /> -day</h3>
           <p style={{  marginTop: '10px', fontWeight: 500 }}>unlimited watching</p>
         </TrialDescription>
         <TrialDescription className="description">
           <img src="/img/trial3.png" alt="trial3" />
-          <H3 style={{ marginTop: '20px' }}><CountUp end={126} /> +</H3>
+          <h3 style={{ marginTop: '20px' }}><CountUp end={126} /> +</h3>
           <p style={{  marginTop: '10px', fontWeight: 500 }}>Downloads</p>
         </TrialDescription>
       </SectionImages>
@@ -47,8 +47,8 @@ const TrialContainer = styled.div`
 
   @media (max-width: 768px) {
     width: 100%;
-    padding: 20px;
-    margin-top: 70px;
+    padding: 50px 20px;
+    margin-top: 30px;
   }
 `
 
@@ -61,10 +61,10 @@ const SectionHeader = styled.div`
 
   @media (max-width: 768px) {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
     padding-top: 20px;
-    justify-content: center;
+    justify-content: flex-start;
   }
 `
 
@@ -90,7 +90,7 @@ const H1 = styled.h1`
   width: 100%;
 
   @media (max-width: 768px) {
-    width: 90%;
+    width: 100%;
     display: flex;
     padding: 10px;
     font-size: 2.5rem;
@@ -126,7 +126,11 @@ const TrialDescription = styled.div`
 
   @media (max-width: 768px) {
     width: 100%;
-    margin: auto;
+    margin-top: 20px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 `
 
