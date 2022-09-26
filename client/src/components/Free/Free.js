@@ -72,7 +72,7 @@ const FreeText = styled.div`
 
   @media (max-width: 768px) {
     width: 100%;
-    margin-top: 20px !important;
+    margin-top: 30px !important;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -131,13 +131,13 @@ const FreeButton = styled.button`
 
   @media (max-width: 768px) {
     display: flex;
-    margin-top: 30px;
-    padding: 20px;
     width: 100%;
     justify-content: center !important;
     align-items: flex-start !important;
     font-weight: 700;
-    font-size: 1rem;
+  font-size: 1rem;
+  background-color: #817dea;
+  border-radius: 10px;
   }
 `
 export default Free;

@@ -35,7 +35,7 @@ const Home = () => {
         <Image src="/img/trial.png" alt="home" />
       </SectionImage>
       <SectionDescription className="section-description">
-        <Heading>Start learning or free!</Heading>
+        <Heading>Start learning for free!</Heading>
         <Description>Subscribe and start learning today! Your free trial includes 14-day unlimited watches.</Description>
         <Form onSubmit={handleSubmit(handleFormSubmit)}>
           <Input type="email"
@@ -62,10 +62,31 @@ const HomeContainer = styled.div`
   height: 80vh;
   margin-top: 30px;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: 20px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    height: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 `
 const SectionImage = styled.div`
   display: flex;
   width: 50%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 `
 
 const Image = styled.img`
@@ -75,6 +96,15 @@ const Image = styled.img`
   position: absolute;
   left: -200px;
   top: 120px;
+
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    position: absolute;
+    left: 0px;
+    top: 120px;
+  }
 `
 
 const SectionDescription = styled.div`
@@ -83,11 +113,27 @@ const SectionDescription = styled.div`
   width: 50%;
   height: auto;
   margin-left: 50px;
+
+  @media (max-width: 768px) {
+    display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  margin-left: 0px;
+  margin-top: 170px;
+  }
 `
 const Heading = styled.h1`
   margin-top: 30px;
   font-size: 3rem;
   width: 100%;
+
+  @media (max-width: 768px) {
+    margin-top: 30px;
+  font-size: 2rem;
+  width: 100%;
+  font-weight: 700;
+  }
 `
 
 const Description = styled.p`
@@ -97,6 +143,15 @@ const Description = styled.p`
   font-weight: 500;
   line-height: 1.5;
   height: auto;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  width: 100%;
+  padding-top: 30px; 
+  font-weight: 500;
+  line-height: 1.5;
+  height: auto;
+  }
 `
 
 const Form = styled.form`
@@ -104,6 +159,15 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   width: 60%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: 20px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 `
 
 const Input = styled.input`
@@ -111,6 +175,15 @@ const Input = styled.input`
   outline: none;
   border: 1px solid #817dea;
   border-radius: 10px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: 20px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 `
 
 const Button = styled.button`
@@ -130,6 +203,15 @@ const Button = styled.button`
  &:hover{
   background-color: #0bce97;
  }
+
+ @media (max-width: 768px) {
+  width: 50%;
+  margin-top: 20px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+    align-items: flex-start;
+}
 `
 
 export default Home

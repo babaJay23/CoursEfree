@@ -140,7 +140,15 @@ const FooterIcons = styled.div`
 `
 
 const FooterImage = styled.img`
-  width: 100%;
+  max-width: 100%;
+
+  @media (max-width: 768px) {
+    display: flex;
+    margin-top: 10px;
+    max-width: 100%;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+  }
 `
 
 const SocialIcons = styled.div`

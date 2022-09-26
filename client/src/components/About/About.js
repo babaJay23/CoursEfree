@@ -39,6 +39,7 @@ const AboutSection = styled.div`
     flex-direction: column;
     width: 100%;
     padding: 20px;
+    margin-top: 30px;
   }
 `
 
@@ -69,7 +70,7 @@ const AboutHeading = styled.h1`
     margin-top: 30px
     font-weight: 900;
     font-size: 2rem;
-    width: 80%;
+    width: 100%;
   }
   
 `

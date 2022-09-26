@@ -45,6 +45,15 @@ const CoursesContainer = styled.div`
   padding: 20px;
    margin-top: 30px;
    padding-bottom: 50px;
+
+   @media (max-width: 768px) {
+    width: 100%;
+    margin-top: 20px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `
 
 const Heading = styled.h3`
@@ -57,6 +66,15 @@ const CourseCategoryWrapper = styled.div`
   grid-gap: 20px;
   width: 100%;
   margin-top: 20px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: 20px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `
 
 const Category = styled.div`
@@ -71,6 +89,15 @@ const Category = styled.div`
   border: none;
   border-radius: 10px;
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: 20px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `
 
 export default Courses
