@@ -21,8 +21,8 @@ const Free = () =>{
         <img src="/img/free.png" alt="free" />
       </FreeImage>
       <FreeText className="free-text">
-        <FreeHeader>Win a FREE COURSE!</FreeHeader>
-        <FreeDescription>Free courses contain industry-relevant content and practical tasks and projects.</FreeDescription>
+        <FreeHeader>Win a PREMIUM COURSE!</FreeHeader>
+        <FreeDescription>Premium courses contain industry-relevant content and practical tasks and projects.</FreeDescription>
         <Modal show={show} handleClose={closeModal} />
         <FreeButton onClick={showModal}>Good Luck!</FreeButton>
       </FreeText>

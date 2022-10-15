@@ -13,7 +13,7 @@ const  About = () => {
         </AboutDescription>
         <ActionContainer className="action">
             <TutorialListItem><Link to="tutorials">Tutorials</Link></TutorialListItem>
-            <CategoryListItem style={{ marginLeft: '20px' }}><Link to="trial">Categories</Link></CategoryListItem>
+            <CategoryListItem style={{ marginLeft: '20px' }}><Link to="courses">Categories</Link></CategoryListItem>
         </ActionContainer>
       </AboutText>
       <SectionImage className="about-image">

@@ -16,7 +16,7 @@ const  sectionContents = [
     bg:'#f9ca63'
   },
   {
-    title: "Financial Planner",
+    title: "Programming",
     description: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. ",
     bg:'#7db6ea'
   },

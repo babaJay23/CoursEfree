@@ -26,7 +26,6 @@ const Navbar = ({about, trial, tutorials, free, resources, courses}) => {
         <NavBar>
           <UlContainer>
             <ListItem><ScrollLink to="about">{about}</ScrollLink></ListItem>
-            <ListItem><ScrollLink to="resources">{resources}</ScrollLink></ListItem>
             <ListItem><ScrollLink to="trial">{trial}</ScrollLink></ListItem>
             <ListItem><ScrollLink to="tutorials">{tutorials}</ScrollLink></ListItem>
             <ListItem><ScrollLink to="courses">{courses}</ScrollLink></ListItem>
