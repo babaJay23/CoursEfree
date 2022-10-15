@@ -103,7 +103,8 @@ const Image = styled.img`
     max-width: 100%;
     position: absolute;
     left: 0px;
-    top: 120px;
+    top: 100px;
+    z-index: -1;
   }
 `
 
@@ -129,7 +130,7 @@ const Heading = styled.h1`
   width: 100%;
 
   @media (max-width: 768px) {
-    margin-top: 30px;
+    margin-top: 50px;
   font-size: 2rem;
   width: 100%;
   font-weight: 700;
@@ -147,7 +148,7 @@ const Description = styled.p`
   @media (max-width: 768px) {
     font-size: 1rem;
   width: 100%;
-  padding-top: 30px; 
+  padding-top: 20px; 
   font-weight: 500;
   line-height: 1.5;
   height: auto;
@@ -162,7 +163,7 @@ const Form = styled.form`
 
   @media (max-width: 768px) {
     width: 100%;
-    margin-top: 20px !important;
+    margin-top: 15px !important;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -178,7 +179,7 @@ const Input = styled.input`
 
   @media (max-width: 768px) {
     width: 100%;
-    margin-top: 20px !important;
+    margin-top: 15px !important;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
