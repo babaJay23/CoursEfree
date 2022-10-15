@@ -127,7 +127,6 @@ const FooterIcons = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 20px;
-  width:50%;
 
   @media (max-width: 768px) {
     display: flex;
@@ -141,14 +140,6 @@ const FooterIcons = styled.div`
 
 const FooterImage = styled.img`
   max-width: 100%;
-
-  @media (max-width: 768px) {
-    display: flex;
-    margin-top: 10px;
-    max-width: 100%;
-    justify-content: flex-start !important;
-    align-items: flex-start !important;
-  }
 `
 
 const SocialIcons = styled.div`
@@ -156,14 +147,6 @@ const SocialIcons = styled.div`
   margin-top: 20px;
   width: 40%;
   justify-content: space-around;
-
-  @media (max-width: 768px) {
-    display: flex;
-    margin-top: 10px;
-    width: 100%;
-    justify-content: flex-start !important;
-    align-items: flex-start !important;
-  }
 `
 const Menu = styled.div`
   margin-top: 30px;
@@ -292,11 +275,5 @@ const HR = styled.hr`
     align-items: flex-start !important;
   }
 `
-
-
-
-
-
-
 
 export default Footer;
