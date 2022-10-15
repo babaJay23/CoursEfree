@@ -209,10 +209,8 @@ const Button = styled.button`
   width: 50%;
   margin-top: 20px !important;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-    align-items: flex-start;
+  justify-content: center;
+  align-items: flex-start;
 }
 `
-
 export default Home

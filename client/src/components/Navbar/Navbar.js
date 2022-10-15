@@ -164,14 +164,21 @@ const OverlayMenu = styled.ul`
   list-style: none;
   position: absolute;
   left: 50%;
-  top: 45%;
+  top: 55%;
   transform: translate(-50%, -50%);
+  
 
   li {
     opacity: ${props => (props.open ? 1 : 0)};
     font-size: 25px;
-    margin: 50px 0px;
+    margin: 0px 0px;
+    color: #fff;
     transition: opacity 0.4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content:center;
+    width: 100% !important;
   }
 
   li:nth-child(2) {
