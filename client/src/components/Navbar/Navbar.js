@@ -188,7 +188,7 @@ const Navbar = ({about, trial, tutorials, free, resources, courses}) => {
               <ScrollLink to="free">{free}</ScrollLink>
             </Item>
             <Item>
-              <LoginLink onClick={showModal}>Log In</LoginLink>
+              <LoginLink onClick={showModal}>Join</LoginLink>
             </Item>
           </Menu>
           <AuthModal show={show} handleClose={closeModal} />
@@ -218,7 +218,7 @@ const Navbar = ({about, trial, tutorials, free, resources, courses}) => {
               <ScrollLink to="free">{free}</ScrollLink>
             </Item>
             <Item>
-              <LoginLink onClick={showModal}>Log In</LoginLink>
+              <LoginLink onClick={showModal}>Join</LoginLink>
             </Item>
         </OverlayMenu>
         <AuthModal show={show} handleClose={closeModal} />

@@ -1,39 +1,37 @@
-import React, { useState } from 'react'
-import styled from 'styled-components'
+import React, { useState } from "react";
+import styled from "styled-components";
+import Slider from "react-animated-slider";
+import "react-animated-slider/build/horizontal.css";
 
-const Courses = () =>{
-
+const Courses = () => {
   const [showContent, setShowContent] = useState(false);
 
-  const showList = () =>{
-    setShowContent(true)
-  }
+  const showList = () => {
+    setShowContent(true);
+  };
   return (
-    <CoursesContainer id="courses">
-      <Heading>Free Courses</Heading>
-      <CourseCategoryWrapper>
-        <Category>
-          <h3>Web Development</h3>
-        </Category>
-        <Category>
+    <Slider autoplay={3000}>
+      <Category>
+        <h3>Web Development</h3>
+      </Category>
+      <Category>
         <h3>Mobile Development</h3>
-        </Category>
-        <Category>
+      </Category>
+      <Category>
         <h3>Digital Marketing</h3>
-        </Category>
-        <Category>
+      </Category>
+      <Category>
         <h3>Web Design</h3>
-        </Category>
-        <Category>
+      </Category>
+      <Category>
         <h3>UI/UX Design</h3>
-        </Category>
-        <Category>
+      </Category>
+      <Category>
         <h3>Ethical Hacking</h3>
-        </Category>
-      </CourseCategoryWrapper>
-    </CoursesContainer>
-  )
-}
+      </Category>
+    </Slider>
+  );
+};
 
 const CoursesContainer = styled.div`
   display: flex;
@@ -43,10 +41,10 @@ const CoursesContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding: 20px;
-   margin-top: 30px;
-   padding-bottom: 50px;
+  margin-top: 30px;
+  padding-bottom: 50px;
 
-   @media (max-width: 768px) {
+  @media (max-width: 768px) {
     width: 100%;
     margin-top: 20px !important;
     display: flex;
@@ -54,11 +52,11 @@ const CoursesContainer = styled.div`
     justify-content: center;
     align-items: center;
   }
-`
+`;
 
 const Heading = styled.h3`
   display: flex;
-`
+`;
 
 const CourseCategoryWrapper = styled.div`
   display: grid;
@@ -75,7 +73,7 @@ const CourseCategoryWrapper = styled.div`
     justify-content: center;
     align-items: center;
   }
-`
+`;
 
 const Category = styled.div`
   display: flex;
@@ -98,6 +96,6 @@ const Category = styled.div`
     justify-content: center;
     align-items: center;
   }
-`
+`;
 
-export default Courses
+export default Courses;
