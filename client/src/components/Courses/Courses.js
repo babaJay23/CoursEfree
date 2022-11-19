@@ -4,11 +4,6 @@ import Slider from "react-animated-slider";
 import "react-animated-slider/build/horizontal.css";
 
 const Courses = () => {
-  const [showContent, setShowContent] = useState(false);
-
-  const showList = () => {
-    setShowContent(true);
-  };
   return (
     <Slider autoplay={3000}>
       <Category>
