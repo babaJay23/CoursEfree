@@ -33,7 +33,7 @@ const Heading = styled.h3`
 
 const CourseCategoryWrapper = styled.div`
   display: flex;
-  width: 90%;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
   background-color: grey;
