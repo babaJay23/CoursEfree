@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
-import { AiOutlineClose } from 'react-icons/ai';
-import { FaBars } from 'react-icons/fa';
 import {Link as ScrollLink } from 'react-scroll';
 import AuthModal from '../../reusable/AuthModal';
 
@@ -40,6 +38,10 @@ const LoginLink = styled.li`
   border-radius: 10px;
   color: #fff;
   font-weight: 700;
+
+  @media (min-width: 769px) {
+    width: 30%;
+  }
 `
 
 const Nav = styled.nav`
@@ -126,15 +128,15 @@ const Overlay = styled.div`
 const OverlayMenu = styled.ul`
   list-style: none;
   position: absolute;
-  left: 50%;
-  top: 55%;
+  left: 28%;
+  top: 50%;
   transform: translate(-50%, -50%);
   
 
   li {
     opacity: ${props => (props.open ? 1 : 0)};
     font-size: 25px;
-    margin: 0px 0px;
+    margin: 50px 0px;
     color: #fff;
     transition: opacity 0.4s ease-in-out;
     display: flex;
@@ -142,10 +144,6 @@ const OverlayMenu = styled.ul`
     align-items: flex-start;
     justify-content:center;
     width: 100% !important;
-  }
-
-  li:nth-child(2) {
-    margin: 50px 0px;
   }
 `;
 
@@ -202,24 +200,24 @@ const Navbar = ({about, trial, tutorials, free, resources, courses}) => {
       </Nav>
       <Overlay open={toggle}>
         <OverlayMenu open={toggle}>
-            <Item>
+            <li>
               <ScrollLink to="about">{about}</ScrollLink>
-            </Item>
-            <Item>
+            </li>
+            <li>
               <ScrollLink to="trial">{trial}</ScrollLink>
-            </Item>
-            <Item>
+            </li>
+            <li>
               <ScrollLink to="tutorials">{tutorials}</ScrollLink>
-            </Item>
-            <Item>
+            </li>
+            <li>
               <ScrollLink to="courses">{courses}</ScrollLink>
-            </Item>
-            <Item>
+            </li>
+            <li>
               <ScrollLink to="free">{free}</ScrollLink>
-            </Item>
-            <Item>
+            </li>
+            <li>
               <LoginLink onClick={showModal}>Join</LoginLink>
-            </Item>
+            </li>
         </OverlayMenu>
         <AuthModal show={show} handleClose={closeModal} />
       </Overlay>
