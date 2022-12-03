@@ -73,6 +73,7 @@ overflow: hidden;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 50px;
   }
 `;
 
@@ -116,7 +117,7 @@ const Category = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 100%;
+    width: 280px;
     margin-top: 20px !important;
     display: flex;
     flex-direction: column;
