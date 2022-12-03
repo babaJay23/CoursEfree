@@ -111,7 +111,7 @@ const Category = styled.div`
     border-radius: 50px;
     justify-content: center;
     align-items: center;
-    background: #333;
+    background: #817dea;
     color: #fff;
   }
 
