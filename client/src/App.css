@@ -9,3 +9,18 @@
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
+
+.slider-container {
+  width: 85vw;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.owl-carousel{
+  width: 100%;
+  padding: 30px;
+}

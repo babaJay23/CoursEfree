@@ -1,43 +1,65 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import Slider from "react-animated-slider";
+import OwlCarousel from "react-owl-carousel";
+import "owl.carousel/dist/assets/owl.carousel.css";
+import "owl.carousel/dist/assets/owl.theme.default.css";
 import "react-animated-slider/build/horizontal.css";
+import { courseCategories } from "../../data/courses";
 
-const courseCategories = [
-  "Web Development",
-  "Mobile Development",
-  "Digital Marketing",
-  "Web Design",
-  "UI/UX Design",
-  "Ethical Hacking",
-];
 
 const Courses = () => {
+  const options = {
+    margin: 5,
+    responsiveClass: true,
+    autoWidth: true,
+    loop: true,
+    pullDrag: true,
+    autoplay: true,
+    autoplayHoverPause: true,
+    autoHeight: true,
+    smartSpeed: 800,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      400: {
+        items: 1,
+      },
+      600: {
+        items: 2,
+      },
+      700: {
+        items: 3,
+      },
+      1000: {
+        items: 5,
+      },
+    },
+  };
   return (
-    <Slider autoplay={3000} style={{ height: '100px', backgroundColor: 'red' }}>
-      <CourseCategoryWrapper>
+    <CourseCategoryWrapper>
+      <OwlCarousel className='slider-items owl-carousel' {...options}>
       {courseCategories.map((category, index) => {
         return (
-            <NavLink key={index} to="/category">{category}</NavLink>
+            <div key={index}>
+              <NavLink to="/category">{category}</NavLink>
+            </div>
         );
       })}
-       </CourseCategoryWrapper>
-    </Slider>
+    </OwlCarousel>
+    </CourseCategoryWrapper>
   );
 };
 
-const Heading = styled.h3`
-  display: flex;
-`;
-
 const CourseCategoryWrapper = styled.div`
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: space-between;
-  background-color: grey;
-  margin: auto;
+width: 85vw;
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+margin-right: auto;
+margin-left: auto;
 
   @media (max-width: 768px) {
     width: 100%;
