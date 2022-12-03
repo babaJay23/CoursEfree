@@ -10,7 +10,7 @@ import { courseCategories } from "../../data/courses";
 
 const Courses = () => {
   const options = {
-    margin: 5,
+    margin: 38,
     responsiveClass: true,
     autoWidth: true,
     loop: true,
@@ -39,12 +39,12 @@ const Courses = () => {
   };
   return (
     <CourseCategoryWrapper>
-      <OwlCarousel className='slider-items owl-carousel' {...options}>
+      <OwlCarousel className='owl-carousel' {...options}>
       {courseCategories.map((category, index) => {
         return (
-            <div key={index}>
-              <NavLink to="/category">{category}</NavLink>
-            </div>
+            <Category key={index}>
+              <NavLink to="/category">{category.name}</NavLink>
+            </Category>
         );
       })}
     </OwlCarousel>
@@ -53,13 +53,15 @@ const Courses = () => {
 };
 
 const CourseCategoryWrapper = styled.div`
-width: 85vw;
+width: 100%;
 display: flex;
 flex-wrap: wrap;
 align-items: center;
 justify-content: center;
+padding: 48px 128px;
 margin-right: auto;
 margin-left: auto;
+overflow: hidden;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -73,19 +75,23 @@ margin-left: auto;
 
 const NavLink = styled(Link)`
 display: flex;
-padding: 20px;
-background-color: white;
+text-decoration: none;
+text-align: center;
+font-weight: 700;
+color: #333;
 `
 
 const Category = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #0bce97;
+  background-color: #eaf0f3;
   color: #fff;
-  width: 100%;
+  width: 200px;
+  height: 200px;
+  padding: 32px 24px 16px;
+  margin: 0px !important;
   align-items: center;
   justify-content: center;
-  padding: 20px;
   border: none;
   border-radius: 10px;
   cursor: pointer;

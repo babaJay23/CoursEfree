@@ -25,4 +25,21 @@ export const courseCategories = [
     name: "Ethical Hacking",
     icon: "",
   },
+  {
+    name: "Networking",
+    icon: "",
+  },
+  {
+    name: "Cloud Computing",
+    icon: "",
+  },
+  {
+    name: "Machine Learning",
+    icon: "",
+  },
+  {
+    name: "Data Science",
+    icon: "",
+  }
+  
 ];

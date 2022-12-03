@@ -1,41 +1,7 @@
 import React, {useState, useEffect } from 'react'
 import styled from 'styled-components';
-import { Link } from 'react-router-dom'
 import Modal from '../../reusable/Modal';
-
-
-const  sectionContents = [
-  {
-    title: "Digital Marketing",
-    description: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
-    bg:'#817dea'
-  },
-  {
-    title: "UI/UX Designer",
-    description: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
-    bg:'#f9ca63'
-  },
-  {
-    title: "Programming",
-    description: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. ",
-    bg:'#7db6ea'
-  },
-  {
-    title: "English Learning",
-    description: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. ",
-    bg:'#63def9'
-  },
-  {
-    title: "Photography Basic",
-    description: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. ",
-    bg:'#ea7d7d'
-  },
-  {
-    title: "Logo Creation",
-    description: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. ",
-    bg:'#e873c7'
-  }
-]
+import { sectionContents } from '../../data/tutorial';
 
 
 const Tutorial = ({text}) =>{
