@@ -17,7 +17,7 @@ const Courses = () => {
     pullDrag: true,
     autoplay: true,
     autoplayHoverPause: true,
-    autoHeight: true,
+    autoHeight: false,
     smartSpeed: 800,
     responsive: {
       0: {
