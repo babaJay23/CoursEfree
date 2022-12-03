@@ -43,7 +43,10 @@ const Courses = () => {
       {courseCategories.map((category, index) => {
         return (
             <Category key={index}>
-              <NavLink to="/category">{category.name}</NavLink>
+              <i>{category.icon}</i>
+              <NavLink to="/category">
+                {category.name}
+              </NavLink>
             </Category>
         );
       })}
@@ -75,10 +78,13 @@ overflow: hidden;
 
 const NavLink = styled(Link)`
 display: flex;
+flex-direction: column;
 text-decoration: none;
 text-align: center;
+align-items: center;
 font-weight: 700;
 color: #333;
+margin-top: 15px;
 `
 
 const Category = styled.div`
@@ -95,6 +101,19 @@ const Category = styled.div`
   border: none;
   border-radius: 10px;
   cursor: pointer;
+
+  i{
+    position: relative;
+    height: 75px;
+    width: 75px;
+    display: flex;
+    border: none;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    background: #333;
+    color: #fff;
+  }
 
   @media (max-width: 768px) {
     width: 100%;
