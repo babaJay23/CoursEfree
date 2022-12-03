@@ -38,10 +38,6 @@ const LoginLink = styled.li`
   border-radius: 10px;
   color: #fff;
   font-weight: 700;
-
-  @media (min-width: 769px) {
-    width: 30%;
-  }
 `
 
 const Nav = styled.nav`
