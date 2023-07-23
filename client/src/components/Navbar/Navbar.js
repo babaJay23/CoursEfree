@@ -4,6 +4,14 @@ import {Link as ScrollLink } from 'react-scroll';
 import AuthModal from '../../reusable/AuthModal';
 
 
+const Nav = styled.nav`
+  padding: 0 20px;
+  width: 100%;
+  min-height: 9vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
 
 const LogoContainer = styled.div`
   display: flex;
@@ -38,25 +46,18 @@ const LoginLink = styled.li`
   border-radius: 10px;
   color: #fff;
   font-weight: 700;
+  width: 100px;
 `
-
-const Nav = styled.nav`
-  padding: 0 20px;
-  min-height: 9vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
 
 
 const Menu = styled.ul`
   display: flex;
-  justify-content: center;
-  min-width: 70%;
+  justify-content: space-between;
+  width: 50%;
   align-items: center;
 
   li:nth-child(2) {
-    margin: 0px 20px;
+    //margin: 0 20px;
   }
 
   @media (max-width: 768px) {
@@ -70,7 +71,6 @@ const Item = styled.li`
   font-size: .9rem;
   align-items: center;
   justify-content: center;
-  padding: 15px;
   cursor: pointer;
 
   @media (min-width: 769px) {
