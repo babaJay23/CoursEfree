@@ -81,7 +81,7 @@ const handleFormSubmit = (e) =>{
       </TopContainer>
       <BottomSection className="bottom-section">
           <HR />
-          <p style={{ marginTop: '20px', fontSize: '0.8rem' }}>Copyright © 2022. All Rights Reserved.</p>
+          <p style={{ marginTop: '20px', fontSize: '0.8rem' }}>Copyright © {new Date().getFullYear()}. All Rights Reserved.</p>
       </BottomSection>
     </FooterContainer>
   )

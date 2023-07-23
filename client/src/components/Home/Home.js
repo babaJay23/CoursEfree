@@ -14,9 +14,7 @@ const Home = () => {
   }
 
   const handleFormSubmit = (e) => {
-
     if(email !== ''){
-
       Swal.fire({
         title: 'Wow!',
         timer: 2000,
@@ -36,7 +34,7 @@ const Home = () => {
       </SectionImage>
       <SectionDescription className="section-description">
         <Heading>Start learning for free!</Heading>
-        <Description>Subscribe and start learning today! Your free trial includes 14-day unlimited watches.</Description>
+        <Description>Subscribe and start learning today! Your free trial includes unlimited watches and downloads.</Description>
         <Form onSubmit={handleSubmit(handleFormSubmit)}>
           <Input type="email"
             value={email}
@@ -60,7 +58,7 @@ const HomeContainer = styled.div`
   width: 100%;
   padding-top: 30px;
   height: 80vh;
-  margin-top: 30px;
+  margin-top: 150px !important;
   justify-content: space-between;
 
   @media (max-width: 768px) {
@@ -68,8 +66,8 @@ const HomeContainer = styled.div`
     margin-top: 20px !important;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    //justify-content: center;
+    //align-items: center;
     padding: 20px;
     height: 100%;
     justify-content: flex-start;
@@ -95,7 +93,7 @@ const Image = styled.img`
   max-width: 100%;
   position: absolute;
   left: -200px;
-  top: 120px;
+  top: 250px;
 
   @media (max-width: 768px) {
     display: flex;
@@ -175,7 +173,7 @@ const Input = styled.input`
   padding: 20px;
   outline: none;
   border: 1px solid #817dea;
-  border-radius: 10px;
+  border-radius: 3px;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -188,7 +186,7 @@ const Input = styled.input`
 `
 
 const Button = styled.button`
- width: 40%;
+ width: 30%;
  padding: 20px;
  margin-top: 20px;
  outline: none;
@@ -197,8 +195,8 @@ const Button = styled.button`
  border: none;
  color: #fff;
  font-weight: 600;
- font-size: 1rem;
- border-radius: 10px;
+ font-size: .8rem;
+ border-radius: 3px;
  transition: 0.3s;
 
  &:hover{

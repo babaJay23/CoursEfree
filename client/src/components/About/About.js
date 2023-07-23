@@ -7,9 +7,9 @@ const  About = () => {
     <AboutSection className='about' id="about">
       <AboutText className="about-text">
         <AboutHeading>Learn something new every day</AboutHeading>
-        <AboutDescription>From marketing skills to dancing moves - our tutorials teach you how to do nearly everything. Start learning today!</AboutDescription>
+        <AboutDescription>From marketing skills to mobile development skills - our tutorials teach you how to do nearly everything. Start learning today!</AboutDescription>
         <AboutDescription>
-          CoursEfree is dedicated to always provide an excellent level of teaching, innovative equipment and research, just as well as the personal intellectual growth for each of its students. All that is possible within our diverse academic community.
+          CoursEfree is dedicated to always provide an excellent level of access to free resources including teaching, innovative equipment and research, just as well as the personal intellectual growth for each of its users.
         </AboutDescription>
         <ActionContainer className="action">
             <TutorialListItem><Link to="tutorials">Tutorials</Link></TutorialListItem>
@@ -30,7 +30,7 @@ const AboutSection = styled.div`
    align-items: flex-start;
    justify-content: center;
    padding: 20px;
-   margin-top: 120px;
+   margin-top: 50px;
    padding-bottom: 50px;
 
 
@@ -42,8 +42,6 @@ const AboutSection = styled.div`
     margin-top: 30px;
   }
 `
-
-
 const AboutText = styled.div`
   display: flex;
   flex-direction: column;

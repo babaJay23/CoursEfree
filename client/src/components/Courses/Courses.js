@@ -38,20 +38,23 @@ const Courses = () => {
     },
   };
   return (
-    <CourseCategoryWrapper>
-      <OwlCarousel className='owl-carousel' {...options}>
-      {courseCategories.map((category, index) => {
-        return (
-            <Category key={index}>
-              <i>{category.icon}</i>
-              <NavLink to="/category">
-                {category.name}
-              </NavLink>
-            </Category>
-        );
-      })}
-    </OwlCarousel>
-    </CourseCategoryWrapper>
+      <div id="courses" style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', paddingTop:'150px'}}>
+        <h5 style={{fontSize: '3rem'}}>Choose course category.</h5>
+        <CourseCategoryWrapper>
+          <OwlCarousel className='owl-carousel' {...options}>
+            {courseCategories.map((category, index) => {
+              return (
+                  <Category key={index}>
+                    <i>{category.icon}</i>
+                    <NavLink to="/category">
+                      {category.name}
+                    </NavLink>
+                  </Category>
+              );
+            })}
+          </OwlCarousel>
+        </CourseCategoryWrapper>
+      </div>
   );
 };
 
